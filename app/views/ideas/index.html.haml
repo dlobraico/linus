@@ -14,6 +14,12 @@
       %td= link_to 'Edit', edit_idea_path(idea)
       %td= link_to 'Destroy', idea, :confirm => 'Are you sure?', :method => :delete
 
+:javascript
+  $(function() {
+    window.router = new Linus.Routers.IdeasRouter({posts: #{@ideas.to_json.html_safe}});
+    Backbone.history.start();
+  });
+
 %br
 
 = link_to 'New Idea', new_idea_path

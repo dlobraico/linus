@@ -1,7 +1,7 @@
 class CreateIdeas < ActiveRecord::Migration
   def change
     create_table :ideas do |t|
-      t.text :headline
+      t.string :headline
 
       t.timestamps
     end
