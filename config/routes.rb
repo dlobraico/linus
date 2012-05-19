@@ -1,4 +1,10 @@
 Linus::Application.routes.draw do
+  resources :editors
+
+  resources :writers
+
+  resources :submissions
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

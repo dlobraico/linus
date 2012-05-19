@@ -1,0 +1,23 @@
+%h1 Listing editors
+
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Username
+    %th
+    %th
+    %th
+
+  - @editors.each do |editor|
+    %tr
+      %td= editor.first_name
+      %td= editor.last_name
+      %td= editor.username
+      %td= link_to 'Show', editor
+      %td= link_to 'Edit', edit_editor_path(editor)
+      %td= link_to 'Destroy', editor, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Editor', new_editor_path

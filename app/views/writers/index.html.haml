@@ -1,0 +1,21 @@
+%h1 Listing writers
+
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th
+    %th
+    %th
+
+  - @writers.each do |writer|
+    %tr
+      %td= writer.first_name
+      %td= writer.last_name
+      %td= link_to 'Show', writer
+      %td= link_to 'Edit', edit_writer_path(writer)
+      %td= link_to 'Destroy', writer, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Writer', new_writer_path

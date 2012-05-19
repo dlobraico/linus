@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @editor.first_name
+%p
+  %b Last name:
+  = @editor.last_name
+%p
+  %b Username:
+  = @editor.username
+
+= link_to 'Edit', edit_editor_path(@editor)
+\|
+= link_to 'Back', editors_path

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @writer.first_name
+%p
+  %b Last name:
+  = @writer.last_name
+
+= link_to 'Edit', edit_writer_path(@writer)
+\|
+= link_to 'Back', writers_path

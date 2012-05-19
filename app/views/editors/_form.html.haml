@@ -1,0 +1,19 @@
+= form_for @editor do |f|
+  -if @editor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@editor.errors.count, "error")} prohibited this editor from being saved:"
+      %ul
+        - @editor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :username
+    = f.text_field :username
+  .actions
+    = f.submit 'Save'
