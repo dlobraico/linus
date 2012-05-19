@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519023919) do
+ActiveRecord::Schema.define(:version => 20120519030100) do
 
   create_table "editors", :force => true do |t|
     t.string   "first_name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20120519023919) do
   end
 
   create_table "ideas", :force => true do |t|
-    t.string   "headline"
+    t.text     "headline"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
