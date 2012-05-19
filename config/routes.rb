@@ -1,4 +1,6 @@
 Linus::Application.routes.draw do
+  resources :ideas
+
   resources :editors
 
   resources :writers
