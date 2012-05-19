@@ -15,6 +15,8 @@ class Linus.Routers.IdeasRouter extends Backbone.Router
     $("#ideas").html(@view.render().el)
 
   index: ->
+    @view = new Linus.Views.Ideas.NewView(collection: @ideas)
+    $("#new-idea").html(@view.render().el)
     @view = new Linus.Views.Ideas.IndexView(ideas: @ideas)
     $("#ideas").html(@view.render().el)
 

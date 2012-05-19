@@ -5,6 +5,7 @@ class Linus.Views.Ideas.NewView extends Backbone.View
 
   events:
     "submit #new-idea": "save"
+    "keypress input[type=text]": "saveOnEnter"
 
   constructor: (options) ->
     super(options)
@@ -14,20 +15,28 @@ class Linus.Views.Ideas.NewView extends Backbone.View
       this.render()
     )
 
+  saveOnEnter: (e) ->
+    return unless e.keyCode is 13
+    @save(e)
+
   save: (e) ->
     e.preventDefault()
     e.stopPropagation()
 
-    @model.unset("errors")
+    headline = @$("#new-idea #headline").val()
+    if headline
+      @$("input#headline").val ''
+      @collection.create(headline: headline)
 
-    @collection.create(@model.toJSON(),
-      success: (idea) =>
-        @model = idea
-        window.location.hash = "/#{@model.id}"
-
-      error: (idea, jqXHR) =>
-        @model.set({errors: $.parseJSON(jqXHR.responseText)})
-    )
+      #    @model.unset("errors")
+      #
+      #    @collection.create(@model.toJSON(),
+      #      success: (idea) =>
+      #        @model = idea
+      #
+      #      error: (idea, jqXHR) =>
+      #        @model.set({errors: $.parseJSON(jqXHR.responseText)})
+      #    )
 
   render: ->
     $(@el).html(@template(@model.toJSON() ))

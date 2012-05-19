@@ -5,6 +5,7 @@ class Linus.Views.Ideas.IndexView extends Backbone.View
 
   initialize: () ->
     @options.ideas.bind('reset', @addAll)
+    @options.ideas.bind('sync', @render)
 
   addAll: () =>
     @options.ideas.each(@addOne)
