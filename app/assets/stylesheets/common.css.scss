@@ -4,6 +4,17 @@ body {
   padding: 0;
 }
 
+.home #status-nav, 
+.ideas #ideas-nav, 
+.assignments #assignments-nav, 
+.submissions #submissions-nav,
+.articles #articles-nav,
+.preferences #preferences-nav {
+  a {
+    color: #FFFF33;
+  }
+}
+
 body {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.4em;
@@ -11,12 +22,25 @@ body {
   color: #333333;
   -webkit-font-smoothing: antialiased;
 
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 0 10px 0; 
+  }
+
   nav {
     &#navbar {
       box-shadow: 0px 0px 8px #666;
       line-height: 1em;
       margin-top: 0;
-      background-color: #ccc;
+      margin-bottom: 40px;
+      background-color: #999;
       height: 40px;
       ul {
         position: absolute;
@@ -25,23 +49,29 @@ body {
         clear: both;
         li {
           padding-right: 10px;
-          font-size: 18px;
-          text-shadow: 1px 1px 5px #999;
           display: inline;
+          font-size: 18px;
+          text-shadow: 1px 1px 1px #666;
           a {
-            color: #333;
+            color: white;
             text-decoration: none;
             &:hover {
-              box-shadow: none;
+              color: #333;
+              text-shadow: none;
             }
           }
         }
       }
       #branding {
         position: absolute;
-        top: 3px;
+        top: 15px;
         left: 10px;
-        img { }
+        .brandname {
+          color: white;
+          font-family: 'MarketingScriptRegular';
+          font-size: 38px;
+          text-shadow: 1px 1px 1px #999;
+        }
       }
     }
   }

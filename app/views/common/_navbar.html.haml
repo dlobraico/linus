@@ -1,12 +1,16 @@
 %nav#navbar
   #branding
-    = image_tag "wordmark-white-small.png"
+    %span.brandname Linus
   %ul
-    %li
+    %li#status-nav
       = link_to 'Status', '/'
-    %li
+    %li#ideas-nav
       = link_to 'Ideas', ideas_path
-    %li Assignments
-    %li Submissions
-    %li Articles
-    %li Preferences
+    %li#assignments-nav
+      = link_to 'Assignments', assignments_path
+    %li#submissions-nav
+      = link_to 'Submissions', "home#index"
+    %li#articles-nav
+      = link_to 'Articles', "home#index"
+    %li#preferences-nav
+      = link_to 'Preferences', "home#index"

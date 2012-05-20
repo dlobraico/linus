@@ -3,21 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.container {
-  width: 960px;
-  margin: 0 auto;
-}
-
-h1 {
-  font-size: 36px;
-  font-weight: bold;
-  text-align: center;
-  padding: 0 0 10px 0; 
-}
-
-#ideas-app {
-  position: absolute;
-  top: 80px;
+.container#ideas-app {
   background: #fff;
   padding: 20px;
   margin-bottom: 40px;

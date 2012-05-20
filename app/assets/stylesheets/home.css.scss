@@ -1,3 +1,14 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.container#welcome {
+  margin: 0 auto;
+  width: 400px;
+  line-height: 3em;
+  .brandname {
+    font-family: 'MarketingScriptRegular';
+    font-size: 48px;
+  }
+}
