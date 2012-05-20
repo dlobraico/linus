@@ -14,9 +14,16 @@ body {
   line-height: 1.4em;
   background: #eeeeee;
   color: #333333;
-  width: 520px;
+  width: 960px;
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 0 10px 0; 
 }
 
 #ideas-app {
@@ -34,15 +41,9 @@ body {
   -o-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 
-  h1 {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    padding: 0 0 10px 0; 
-  }
 
   input[type="text"] {
-    width: 466px;
+    width: 900px;
     font-size: 24px;
     font-family: inherit;
     line-height: 1.4em;
@@ -105,7 +106,7 @@ body {
       }
       .edit {
         display: block;
-        width: 444px;
+        width: 877px;
         padding: 13px 15px 14px 20px;
         margin: 0;
       }
