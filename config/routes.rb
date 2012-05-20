@@ -1,5 +1,7 @@
 Linus::Application.routes.draw do
-  resources :ideas
+  resources :ideas do
+    get :autocomplete_writer_name, :on => :collection
+  end
 
   resources :editors
 

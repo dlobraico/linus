@@ -1,4 +1,6 @@
 class IdeasController < ApplicationController
+  autocomplete :writer, :name, :full => true, :extra_data => [:email, :last_name, :first_name]
+
   # GET /ideas
   # GET /ideas.json
   def index
