@@ -7,3 +7,6 @@ class Linus.Models.Idea extends Backbone.Model
 class Linus.Collections.IdeasCollection extends Backbone.Collection
   model: Linus.Models.Idea
   url: '/ideas'
+  comparator: (idea) ->
+    date = new Date(Date.parse(idea.get('created_at')))
+    return date.getTime()

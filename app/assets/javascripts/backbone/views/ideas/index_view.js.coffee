@@ -12,7 +12,7 @@ class Linus.Views.Ideas.IndexView extends Backbone.View
 
   addOne: (idea) =>
     view = new Linus.Views.Ideas.IdeaView({model : idea})
-    @$("#ideas-list").append(view.render().el)
+    @$("#ideas-list").prepend(view.render().el)
 
   render: =>
     $(@el).html(@template(ideas: @options.ideas.toJSON() ))
