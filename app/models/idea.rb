@@ -9,6 +9,8 @@
 #
 
 class Idea < ActiveRecord::Base
+  has_many :assignments
+  has_many :writers, :through => :assignments
   attr_accessible :headline
   #attr_accessible :created_at, :id, :updated_at
 end

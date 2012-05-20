@@ -11,6 +11,8 @@
 #
 
 class Writer < ActiveRecord::Base
+  has_many :assignments 
+  has_many :ideas, :through => :assignments
   attr_accessible :first_name, :last_name, :email
 
   def name

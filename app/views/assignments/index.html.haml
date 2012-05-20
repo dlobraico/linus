@@ -1,0 +1,9 @@
+%h1 Assignments
+
+#assignments
+
+:javascript
+  $(function() {
+    window.router = new Linus.Routers.AssignmentsRouter({assignments: #{@assignments.to_json.html_safe}});
+    Backbone.history.start();
+  });
