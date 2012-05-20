@@ -1,3 +1,125 @@
 // Place all the styles related to the Ideas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  background: #eeeeee;
+  color: #333333;
+  width: 520px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+#ideas-app {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 40px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -ms-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 0 10px 0; 
+  }
+
+  input[type="text"] {
+    width: 466px;
+    font-size: 24px;
+    font-family: inherit;
+    line-height: 1.4em;
+    border: 0;
+    outline: none;
+    padding: 6px;
+    border: 1px solid #999999;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+    -ms-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+    -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+  }
+}
+
+
+#ideas-list {
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 18px 20px 18px 0;
+    position: relative;
+    font-size: 24px;
+    border-bottom: 1px solid #cccccc;
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.done label {
+      color: #777777;
+      text-decoration: line-through;
+    }
+
+    .destroy {
+      position: absolute;
+      right: 5px;
+      top: 20px;
+      display: none;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      background: url(destroy.png) no-repeat;
+      &:hover {
+        background-position: 0 -20px;
+      }
+    }
+
+    &:hover .destroy {
+      display: block;
+    }
+
+    &.editing {
+      border-bottom: none;
+      margin-top: -1px;
+      padding: 0;
+      &:last-child {
+        margin-bottom: -1px;
+      }
+      .edit {
+        display: block;
+        width: 444px;
+        padding: 13px 15px 14px 20px;
+        margin: 0;
+      }
+      .view {
+        display: none;
+      }
+    }
+
+    .view label {
+      word-break: break-word;
+    }
+
+    .edit {
+      display: none;
+    }
+  }
+}

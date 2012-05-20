@@ -59,7 +59,7 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
 
     respond_to do |format|
-      if @idea.update_attributes(params[:idea])
+      if @idea.update_attributes(params[:idea].slice(:headline))
         format.html { redirect_to @idea, notice: 'Idea was successfully updated.' }
         format.json { head :no_content }
       else

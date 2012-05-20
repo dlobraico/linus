@@ -28,16 +28,6 @@ class Linus.Views.Ideas.NewView extends Backbone.View
       @$("input#headline").val ''
       @collection.create(headline: headline)
 
-      #    @model.unset("errors")
-      #
-      #    @collection.create(@model.toJSON(),
-      #      success: (idea) =>
-      #        @model = idea
-      #
-      #      error: (idea, jqXHR) =>
-      #        @model.set({errors: $.parseJSON(jqXHR.responseText)})
-      #    )
-
   render: ->
     $(@el).html(@template(@model.toJSON() ))
 

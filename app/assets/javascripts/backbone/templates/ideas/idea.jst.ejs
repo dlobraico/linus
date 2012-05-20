@@ -1,3 +1,5 @@
-<a href="#/<%= id %>"><%= headline %></a>
-<a href="#/<%= id %>/edit">Edit</a>
-<a href="#/<%= id %>/destroy" class="destroy">Destroy</a>
+<div class="view">
+    <label> <%= headline %></label>
+    <a href="#/<%= id %>/destroy" class="destroy"></a>
+</div>
+<input class="edit" type="text" value="<%= headline %>" />
