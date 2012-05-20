@@ -3,20 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.4em;
-  background: #eeeeee;
-  color: #333333;
+.container {
   width: 960px;
   margin: 0 auto;
-  -webkit-font-smoothing: antialiased;
 }
 
 h1 {
@@ -27,6 +16,8 @@ h1 {
 }
 
 #ideas-app {
+  position: absolute;
+  top: 80px;
   background: #fff;
   padding: 20px;
   margin-bottom: 40px;
@@ -93,8 +84,26 @@ h1 {
       }
     }
 
-    &:hover .destroy {
-      display: block;
+    .assign {
+      color: #888;
+      position: absolute;
+      right: 40px;
+      top: 20px;
+      display: none;
+      cursor: pointer;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
+    }
+
+    &:hover {
+      .destroy {
+        display: block;
+      }
+      .assign {
+        display: block;
+      }
     }
 
     &.editing {
