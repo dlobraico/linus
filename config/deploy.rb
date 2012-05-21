@@ -20,7 +20,7 @@ role :app,                  "linus.chicagoshadydealer.com" # This may be the sam
 role :db,                   "linus.chicagoshadydealer.com", :primary => true # This is where Rails migrations will run
 
 default_environment["RAILS_ENV"]  = 'production'
-default_environment["PATH"]  = "/var/lib/gems/1.8/bin:$PATH"
+default_environment["PATH"]  = "/var/lib/gems/1.9.1/bin:$PATH"
 default_run_options[:shell]       = 'bash'
 default_run_options[:pty]         = true
 
