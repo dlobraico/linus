@@ -24,6 +24,8 @@ group :assets do
   gem 'rails-backbone'
 end
 
+gem 'haml'
+gem 'haml-rails'
 gem 'rails3-jquery-autocomplete'
 
 group :development, :test do
