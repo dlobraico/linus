@@ -13,6 +13,7 @@ gem 'sqlite3'
 group :assets do
   gem 'haml'
   gem 'haml-rails'
+  gem 'haml_coffee_assets'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'execjs'
@@ -21,7 +22,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'haml_coffee_assets'
 gem 'rails-backbone'
 gem 'rails3-jquery-autocomplete'
 
