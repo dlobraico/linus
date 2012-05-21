@@ -8,4 +8,9 @@
 
   %body{:class => controller.controller_name}
     = render 'common/navbar'
+    %p.notice
+      = notice
+    %p.alert
+      = alert
+
     = yield

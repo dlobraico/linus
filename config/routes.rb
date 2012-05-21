@@ -1,4 +1,6 @@
 Linus::Application.routes.draw do
+  devise_for :editors
+
   get "home/index"
 
   #get "assignments/index"
