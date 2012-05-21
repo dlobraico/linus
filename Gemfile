@@ -12,22 +12,20 @@ gem 'mysql2'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'haml'
-  gem 'haml-rails'
   gem 'sass-rails',   '~> 3.2.3'
-#  gem 'haml_coffee_assets'
+  #gem 'haml_coffee_assets'
 
   gem 'execjs'
   gem 'therubyracer'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'jquery-rails'
-  gem 'rails-backbone'
 end
 
 gem 'haml'
 gem 'haml-rails'
 gem 'rails3-jquery-autocomplete'
+gem 'jquery-rails'
+gem 'rails-backbone'
 
 group :development, :test do
   gem 'capistrano'
