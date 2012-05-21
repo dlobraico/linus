@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require autocomplete-rails
-//= require hamlcoffee
 //= require underscore
 //= require backbone
 //= require backbone_rails_sync
