@@ -11,7 +11,7 @@
 #
 
 class Editor < ActiveRecord::Base
-	rolify
+  rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -22,5 +22,5 @@ class Editor < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :username
 
   validates_presence_of :username
-  validates_uniqueness_of :name, :email, :case_sensitive => false
+  validates_uniqueness_of :username, :email, :case_sensitive => false
 end
