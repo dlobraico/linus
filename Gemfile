@@ -9,21 +9,23 @@ gem 'sqlite3'
 gem 'mysql2'
 
 gem 'devise'
+gem 'cancan'
+gem 'rolify'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  #gem 'haml_coffee_assets'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
 
   gem 'execjs'
   gem 'therubyracer'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'haml'
 gem 'haml-rails'
+#gem 'haml_coffee_assets'
 gem 'rails3-jquery-autocomplete'
 gem 'jquery-rails'
 gem 'rails-backbone'
