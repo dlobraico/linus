@@ -41,6 +41,17 @@ body {
       margin-top: 0;
       margin-bottom: 40px;
       background-color: #999;
+/*
+      background: #a3a3a3; 
+      background: -moz-linear-gradient(top, #a3a3a3 0%, #858585 100%); 
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a3a3a3), color-stop(100%,#858585)); 
+      background: -webkit-linear-gradient(top, #a3a3a3 0%,#858585 100%); 
+      background: -o-linear-gradient(top, #a3a3a3 0%,#858585 100%); 
+      background: -ms-linear-gradient(top, #a3a3a3 0%,#858585 100%); 
+      background: linear-gradient(top, #a3a3a3 0%,#858585 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a3a3a3', endColorstr='#858585',GradientType=0 );
+*/
+
       height: 40px;
       ul {
         position: absolute;

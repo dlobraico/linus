@@ -13,6 +13,8 @@ set :ssh_options,           { :forward_agent => true, :keys => [File.join(ENV["H
 set :deploy_to,             "/home/deployer/apps/linus"
 set :deploy_via,            :remote_cache
 set :scm, :git
+set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
+set (:bundle_cmd) { "/usr/local/rbenv/shims/bundle"}
 
 set :rails_env,             "production"
 set :normalize_asset_timestamps, false
@@ -20,9 +22,9 @@ role :web,                  "linus.chicagoshadydealer.com" # Your HTTP server, A
 role :app,                  "linus.chicagoshadydealer.com" # This may be the same as your `Web` server
 role :db,                   "linus.chicagoshadydealer.com", :primary => true # This is where Rails migrations will run
 
-default_environment["RAILS_ENV"]  = 'production'
-default_environment["PATH"]  = "/var/lib/gems/1.9.1/bin:$PATH"
-default_run_options[:shell]       = 'bash'
+default_environment["RAILS_ENV"]  = "production"
+default_environment["PATH"]       = "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH"
+default_run_options[:shell]       = "bash"
 default_run_options[:pty]         = true
 
 # if you want to clean up old releases on each deploy uncomment this:
