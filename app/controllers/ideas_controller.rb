@@ -16,10 +16,11 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
     @assignments = @idea.writers.map {|w| w.name}
 
-#    respond_to do |format|
-#      format.html # assign.html.haml
-#      format.json { render json: @idea }
-#    end
+    respond_to do |format|
+      format.js {render :layout => false}
+      #format.html # assign.html.haml
+      #format.json { render json: @idea }
+    end
   end
 
   def update_assignment

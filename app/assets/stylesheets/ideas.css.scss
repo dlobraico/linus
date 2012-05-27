@@ -24,6 +24,17 @@
   }
 }
 
+#assign-form-container {
+  #assign-form {
+    background: white;
+    width: 300px;
+    height: 200px;
+    float: right;
+    input[type="text"] {
+      width: 80%;
+    }
+  }
+}
 
 #ideas-list {
   margin: 10px 0;

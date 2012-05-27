@@ -1,9 +1,10 @@
-= form_for @idea, :url => update_assignment_idea_path(@idea) do |idea_form|
-  = idea_form.fields_for :writer do |writer_form|
-    .field
-      = writer_form.autocomplete_field :email, autocomplete_writer_email_ideas_path, :placeholder => "Email" 
-    .field
-      = writer_form.text_field :name, :placeholder => "Name"
-    
-  .actions
-    = idea_form.submit 'Assign'
+#assign-form
+  = form_for @idea, :url => update_assignment_idea_path(@idea), :remote => true do |idea_form|
+    = idea_form.fields_for :writer do |writer_form|
+      .field
+        = writer_form.autocomplete_field :email, autocomplete_writer_email_ideas_path, :placeholder => "Email" 
+      .field
+        = writer_form.text_field :name, :placeholder => "Name"
+      
+    .actions
+      = idea_form.submit 'Assign'

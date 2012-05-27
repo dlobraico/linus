@@ -1,6 +1,6 @@
 <div class="view">
     <label> <%= headline %></label>
-    <a href="/ideas/<%= id %>/assign" class="assign">Assign</a>
+    <a href="/ideas/<%= id %>/assign" data-remote="true" class="assign">Assign</a>
     <a href="#/<%= id %>/destroy" class="destroy"></a>
 </div>
 <input class="edit" type="text" value="<%= headline %>" />
