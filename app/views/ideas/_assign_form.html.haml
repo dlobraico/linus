@@ -1,0 +1,16 @@
+%p
+  = @idea.headline
+
+= form_for @idea, :url => update_assignment_idea_path(@idea) do |idea_form|
+  .field
+    = idea_form.text_field :headline
+    = idea_form.fields_for :writer do |writer_form|
+      .field
+        = writer_form.label :email, 'email: '
+        = writer_form.autocomplete_field :email, autocomplete_writer_email_ideas_path
+      .field
+        = writer_form.label :name, 'name: '
+        = writer_form.text_field :name
+    
+  .actions
+    = idea_form.submit 'Save'
