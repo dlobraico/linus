@@ -77,6 +77,9 @@ class AssignmentsController < ApplicationController
     @assignment.destroy
 
     respond_to do |format|
+      if request.xhr?
+        format.js 
+      end
       format.html { redirect_to assignments_url }
       format.json { head :no_content }
     end

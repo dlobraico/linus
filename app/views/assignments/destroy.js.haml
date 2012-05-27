@@ -1,0 +1,5 @@
+:plain
+  $("tr#idea-#{params[:id]}").remove();
+  if ($("table tbody").children().size() == 0) {
+    window.location.replace("/assignments");
+  }
