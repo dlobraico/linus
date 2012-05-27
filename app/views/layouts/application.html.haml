@@ -8,7 +8,8 @@
 
   %body{:class => controller.controller_name}
     = render 'common/navbar'
-    - flash.each do |name, msg|
-      = content_tag :div, msg, :class => "flash", :id => "#{name}" if msg.is_a?(String)
+    .container
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :class => "flash", :id => "#{name}" if msg.is_a?(String)
 
-    = yield
+      = yield

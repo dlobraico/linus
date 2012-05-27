@@ -1,14 +1,11 @@
 %h1 Assign
+%h2= @idea.headline
 
+- unless @assignments.empty?
+  %div#existing
+    %h3 Existing assignments
+    %ul
+      - @assignments.each do |a|
+        %li= a
 
-.container#assignments
-  %h2= @idea.headline
-
-  - unless @assignments.empty?
-    %div#existing
-      %h3 Existing assignments
-      %ul
-        - @assignments.each do |a|
-          %li= a
-
-  = render 'assign_form'
+= render 'assign_form'

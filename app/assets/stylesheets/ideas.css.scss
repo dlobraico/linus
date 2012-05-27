@@ -3,118 +3,126 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'mixins.css.scss';
 
-.container#ideas-app {
-  @include box-shadow;
-  @include border-radius;
-  background: $container_bg;
-  padding: 20px;
-  margin-bottom: 40px;
+body.ideas { 
+  .container {
+    @include box-shadow;
+    @include border-radius;
+    background: $container_bg;
+    padding: 20px;
+    margin-bottom: 40px;
 
 
-  input[type="text"] {
-    width: 99%;
-    font-size: 24px;
-    font-family: inherit;
-    line-height: 1.4em;
-    border: 0;
-    outline: none;
-    padding: 6px;
-    border: 1px solid #999999;
-    @include input-field-box-shadow;
-  }
-}
-
-#assign-form-container {
-  #assign-form {
-    background: white;
-    width: 300px;
-    height: 200px;
-    float: right;
     input[type="text"] {
-      width: 80%;
-    }
-  }
-}
-
-#ideas-list {
-  margin: 10px 0;
-  padding: 0;
-  list-style: none;
-
-  li {
-    padding: 18px 20px 18px 0;
-    position: relative;
-    font-size: 24px;
-    border-bottom: 1px solid #cccccc;
-    &:last-child {
-      border-bottom: none;
+      font-size: 24px;
+      font-family: inherit;
+      width: 99%;
+      @include sexy-input-field;
+      @include input-field-box-shadow;
     }
 
-    .destroy {
-      position: absolute;
-      right: 5px;
-      top: 20px;
-      display: none;
-      cursor: pointer;
-      width: 20px;
-      height: 20px;
-      background: url(destroy.png) no-repeat;
-      border: none;
-      &:hover {
-        text-shadow: none;
-        background-position: 0 -20px;
-      }
-    }
-
-    .assign {
-      color: #888;
-      position: absolute;
-      right: 40px;
-      top: 20px;
-      display: none;
-      cursor: pointer;
-      text-decoration: none;
-      border: none;
-      font-weight: normal;
-      &:hover {
-        text-shadow: none;
-        color: black;
-      }
-    }
-
-    &:hover {
-      .destroy {
-        display: block;
-      }
-      .assign {
-        display: block;
-      }
-    }
-
-    &.editing {
-      border-bottom: none;
-      margin-top: -1px;
+    #ideas-list {
+      margin: 10px 0;
       padding: 0;
-      &:last-child {
-        margin-bottom: -1px;
-      }
-      .edit {
-        display: block;
-        width: 96.5%;
-        padding: 13px 15px 14px 20px;
-        margin: 0;
-      }
-      .view {
-        display: none;
-      }
-    }
+      list-style: none;
 
-    .view label {
-      word-break: break-word;
-    }
+      li {
+        padding: 18px 20px 18px 0;
+        position: relative;
+        font-size: 24px;
+        border-bottom: 1px solid #cccccc;
+        &:last-child {
+          border-bottom: none;
+        }
 
-    .edit {
-      display: none;
+        .destroy {
+          position: absolute;
+          right: 5px;
+          top: 20px;
+          display: none;
+          cursor: pointer;
+          width: 20px;
+          height: 20px;
+          background: url(destroy.png) no-repeat;
+          border: none;
+          &:hover {
+            text-shadow: none;
+            background-position: 0 -20px;
+          }
+        }
+
+        .assign {
+          color: #888;
+          position: absolute;
+          right: 40px;
+          top: 20px;
+          display: none;
+          cursor: pointer;
+          text-decoration: none;
+          border: none;
+          font-weight: normal;
+          &:hover {
+            text-shadow: none;
+            color: black;
+          }
+        }
+
+        &:hover {
+          .destroy {
+            display: block;
+          }
+          .assign {
+            display: block;
+          }
+        }
+
+        &.editing {
+          border-bottom: none;
+          margin-top: -1px;
+          padding: 0;
+          &:last-child {
+            margin-bottom: -1px;
+          }
+          .edit {
+            display: block;
+            width: 96.5%;
+            padding: 13px 15px 14px 20px;
+            margin: 0;
+          }
+          .view {
+            display: none;
+          }
+        }
+
+        .view label {
+          word-break: break-word;
+        }
+
+        .edit {
+          display: none;
+        }
+      }
     }
   }
+
+  .popup_container {
+    h1 {
+      font-size: 20px;
+    }
+    h2 {
+      font-size: 16px;
+    }
+    form {
+      input[type="text"] {
+        font-size: 16px;
+        margin-bottom: 2px;
+        width: 95%;
+        @include sexy-input-field;
+        @include input-field-box-shadow;
+      }
+      input[type="submit"] {
+        float: right;
+      }
+    }
+  }
+
 }

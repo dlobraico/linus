@@ -1,4 +1,4 @@
-#assign-form
+#new-assign
   = form_for @idea, :url => update_assignment_idea_path(@idea), :remote => true do |idea_form|
     = idea_form.fields_for :writer do |writer_form|
       .field

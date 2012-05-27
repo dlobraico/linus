@@ -1,4 +1,5 @@
-- flash.each do |name, msg|
-  = content_tag :div, msg, :class => "flash", :id => "#{name}" if msg.is_a?(String)
+.popup_container
+  - flash.each do |name, msg|
+    = content_tag :div, msg, :class => "flash", :id => "#{name}" if msg.is_a?(String)
 
-= yield
+  = yield
