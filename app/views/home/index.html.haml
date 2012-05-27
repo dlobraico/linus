@@ -1,2 +1,20 @@
-.container#welcome
-  %h1 Welcome to <span class="brandname">Linus</span>.
+%h1 Welcome to <span class="brandname">Linus</span>.
+%h2!= "We are currently working on <strong>Volume #{@current_issue.volume}</strong>, <strong>Issue #{@current_issue.issue}</strong>."
+%ul{:style => "line-height: 1.2em;"}
+  %li!= "Printer Deadline: <strong>#{@print_date}</strong>."
+  %li!= "Distribution Date: <strong>#{@dist_date}</strong>."
+
+%table
+  %thead
+    %tr
+      %th Ideas
+      %th Assignments
+      %th Submissions
+  %tbody
+    %tr
+      %td.ideas
+        = @ideas
+      %td.assignments
+        = @assignments
+      %td.submissions
+        = @submissions

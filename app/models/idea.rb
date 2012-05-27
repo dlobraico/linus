@@ -12,7 +12,7 @@ class Idea < ActiveRecord::Base
   has_many :assignments
   has_many :writers, :through => :assignments, :dependent => :destroy
   belongs_to :issue
-  attr_accessible :headline
+  attr_accessible :headline, :issue_id
   accepts_nested_attributes_for :writers
   
   def assign!(writer)

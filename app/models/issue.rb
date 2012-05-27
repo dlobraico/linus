@@ -1,6 +1,6 @@
 class Issue < ActiveRecord::Base
   has_many :ideas
-  has_many :assigments
+  has_many :assignments
   has_many :submissions
 
   attr_accessible :distribution, :issue, :printing_deadline, :volume

@@ -1,14 +1,37 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'mixins.css.scss';
 
 
-.container#welcome {
+.home .container {
+  @include box-shadow;
+  @include border-radius;
+  background: $container_bg;
+  padding: 20px;
+  margin-bottom: 40px;
   margin: 0 auto;
-  width: 400px;
-  line-height: 3em;
-  .brandname {
-    font-family: 'MarketingScriptRegular';
-    font-size: 48px;
+  max-width: 960px;
+  width: 95%;
+  line-height: 1.4em;
+  h1 {
+    .brandname {
+      font-family: 'MarketingScriptRegular';
+      font-size: 48px;
+    }
+  }
+  ul {
+    width: 400px;
+    margin: 0 auto;
+    list-style-type: none;
+    display: block;
+  }
+  table {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 40px;
+    td {
+      text-align: center;
+    }
   }
 }
