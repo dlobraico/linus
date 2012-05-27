@@ -22,7 +22,7 @@ group :assets do
   gem 'jquery-ui-rails'
 
   gem 'execjs'
-  gem 'therubyracer', :platforms => :ruby # seems to be broken on 64-bit linux
+  #gem 'therubyracer' # seems to be broken on 64-bit linux
 end
 
 gem 'haml'
