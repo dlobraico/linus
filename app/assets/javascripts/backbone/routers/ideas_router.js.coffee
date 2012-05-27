@@ -20,10 +20,10 @@ class Linus.Routers.IdeasRouter extends Backbone.Router
     $("#new-idea").html(@view.render().el)
     @view = new Linus.Views.Ideas.IndexView(ideas: @ideas)
     $("#ideas").html(@view.render().el)
+    $("a[rel*=facebox]").facebox()
 
   show: (id) ->
     idea = @ideas.get(id)
-
     @view = new Linus.Views.Ideas.ShowView(model: idea)
     $("#ideas").html(@view.render().el)
 

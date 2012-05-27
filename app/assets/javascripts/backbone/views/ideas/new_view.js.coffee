@@ -30,7 +30,5 @@ class Linus.Views.Ideas.NewView extends Backbone.View
 
   render: ->
     $(@el).html(@template(@model.toJSON() ))
-
     this.$("form").backboneLink(@model)
-
     return this

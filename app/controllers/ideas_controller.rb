@@ -18,12 +18,12 @@ class IdeasController < ApplicationController
 
 
     respond_to do |format|
-      if true
-        format.html { render layout: 'popup'}
+      if request.xhr?
+        format.html { render layout: 'popup'} 
       else
         format.html # assign.html.haml
-        format.json { render json: @idea }
       end
+      format.js 
     end
   end
 
