@@ -26,7 +26,7 @@ end
 gem 'haml'
 gem 'haml-rails'
 #gem 'haml_coffee_assets'
-gem 'rails3-jquery-autocomplete'
+gem 'rails3-jquery-autocomplete', :git => 'git://github.com/slash4/rails3-jquery-autocomplete.git'
 gem 'jquery-rails'
 gem 'rails-backbone'
 
