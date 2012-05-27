@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120526203122) do
+ActiveRecord::Schema.define(:version => 20120527202956) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "idea_id"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(:version => 20120526203122) do
     t.string   "headline"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "issues", :force => true do |t|
+    t.integer  "volume"
+    t.integer  "issue"
+    t.datetime "printing_deadline"
+    t.datetime "distribution"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "roles", :force => true do |t|
