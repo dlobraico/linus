@@ -8,7 +8,12 @@ Linus::Application.routes.draw do
   resources :assignments
 
   resources :ideas do
+    member do
+      get 'assign'
+      put 'update_assignment'
+    end
     get :autocomplete_writer_name, :on => :collection
+    get :autocomplete_writer_email, :on => :collection
   end
   resources :writers
   resources :submissions

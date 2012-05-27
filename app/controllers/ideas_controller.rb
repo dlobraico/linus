@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  autocomplete :writer, :name, :full => true, :extra_data => [:email, :last_name, :first_name]
+  autocomplete :writer, [:email, :name], :full => true, :extra_data => [:name]
 
   # GET /ideas
   # GET /ideas.json
@@ -7,8 +7,36 @@ class IdeasController < ApplicationController
     @ideas = Idea.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @ideas }
+    end
+  end
+
+  def assign
+    @idea = Idea.find(params[:id])
+
+#    respond_to do |format|
+#      format.html # assign.html.haml
+#      format.json { render json: @idea }
+#    end
+  end
+
+  def update_assignment
+    @idea = Idea.find(params[:id])
+    hash = {
+             email: params[:idea][:writer][:email], 
+             name: params[:idea][:writer][:name]
+          }
+
+    @idea.assign! hash
+    respond_to do |format|
+      if @idea.save
+        format.html { redirect_to ideas_url, notice: 'Idea was successfully updated.' }
+        format.json { render json: @idea, status: :assigned, location: @idea }
+      else
+        format.html { render action: "assign" }
+        format.json { render json: @idea.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -18,7 +46,7 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.haml
       format.json { render json: @idea }
     end
   end
@@ -29,7 +57,7 @@ class IdeasController < ApplicationController
     @idea = Idea.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.json { render json: @idea }
     end
   end

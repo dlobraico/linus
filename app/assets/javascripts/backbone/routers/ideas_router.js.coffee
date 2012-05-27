@@ -4,11 +4,12 @@ class Linus.Routers.IdeasRouter extends Backbone.Router
     @ideas.reset options.ideas
 
   routes:
-    "new"      : "newIdea"
-    "index"    : "index"
-    ":id/edit" : "edit"
-    ":id"      : "show"
-    ".*"        : "index"
+    "new"        : "newIdea"
+    "index"      : "index"
+    #":id/assign" : "assign"
+    #":id/edit"   : "edit"
+    #":id"        : "show"
+    ".*"         : "index"
 
   newIdea: ->
     @view = new Linus.Views.Ideas.NewView(collection: @ideas)

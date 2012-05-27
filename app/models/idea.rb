@@ -12,5 +12,14 @@ class Idea < ActiveRecord::Base
   has_many :assignments
   has_many :writers, :through => :assignments
   attr_accessible :headline
-  #attr_accessible :created_at, :id, :updated_at
+  accepts_nested_attributes_for :writers
+  
+  def assign!(writer)
+    unless writer.is_a? Writer
+      w = Writer.find_or_create_by_email(writer[:email], :name => writer[:name])
+      writer = w
+    end
+    self.writers << writer
+    self.save
+  end
 end
