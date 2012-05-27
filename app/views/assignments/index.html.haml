@@ -1,7 +1,8 @@
-#assignments
+.container#assignments
+  - unless @assignments.empty?
+    - @assignments.each do |a|
+      %p!= "#{a.writer_id} #{a.idea_id} #{link_to "Delete", a, :confirm => "Are you sure?", :method => :delete}"
 
-:javascript
-  $(function() {
-    window.router = new Linus.Routers.AssignmentsRouter({assignments: #{@assignments.to_json.html_safe}});
-    Backbone.history.start();
-  });
+  - if @assignments.empty?
+    %h1 No assignments right now.
+    %h2!= "Why don't you make some on the #{link_to "ideas page", ideas_path}?"

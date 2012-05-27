@@ -1,3 +1,5 @@
+@import 'mixins.css.scss';
+
 html,
 body {
   margin: 0;
@@ -11,7 +13,7 @@ body {
 .articles #articles-nav,
 .preferences #preferences-nav {
   a {
-    color: #FFFF33;
+    color: $active_nav_link;
   }
 }
 
@@ -20,11 +22,7 @@ div.flash {
   margin: 0 auto;
   margin-bottom: 40px;
   padding: 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
-  -ms-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  @include box-shadow;
   &#notice {
     background-color: #DEF2DE;
     border-color: #D3EED7;
@@ -41,14 +39,32 @@ div.flash {
 body {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.4em;
-  background: #eeeeee;
-  color: #333333;
+  background: $body_bg;
+  color: $text_color;
   -webkit-font-smoothing: antialiased;
 
   .container {
-    width: 960px;
+    max-width: 960px;
+    width: 95%;
     margin: 0 auto;
   }
+  
+  a {
+    font-weight: bold;
+    border-bottom: dotted 1px;
+    text-decoration: none;
+    color: $text_color;
+    &:hover {
+      text-shadow: 0px 0px 10px #666;
+    }
+    &:active {
+      padding-top: 10px;
+    }
+    &:visited {
+      color: #666;
+    }
+  }
+
 
   h1 {
     font-size: 36px;
@@ -57,13 +73,20 @@ body {
     padding: 0 0 10px 0; 
   }
 
+  h2 {
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    padding: 0 0 6px 0;
+  }
+
   nav {
     &#navbar {
       box-shadow: 0px 0px 8px #666;
       line-height: 1em;
       margin-top: 0;
       margin-bottom: 40px;
-      background-color: #999;
+      background-color: $nav_bg;
 /*
       background: #a3a3a3; 
       background: -moz-linear-gradient(top, #a3a3a3 0%, #858585 100%); 
@@ -87,10 +110,12 @@ body {
           font-size: 18px;
           text-shadow: 1px 1px 1px #666;
           a {
+            font-weight: normal;
             color: white;
             text-decoration: none;
+            border: none;
             &:hover {
-              color: #333;
+              color: $hover_nav_link;
               text-shadow: none;
             }
           }
