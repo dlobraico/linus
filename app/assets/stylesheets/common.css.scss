@@ -15,6 +15,29 @@ body {
   }
 }
 
+div.flash {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -ms-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  &#notice {
+    background-color: #DEF2DE;
+    border-color: #D3EED7;
+    color: #4AB948;
+  }
+  &#alert {
+    background-color: #F2DEDE;
+    border-color: #EED3D7;
+    color: #B94A48;
+  }
+}
+
+
 body {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.4em;
