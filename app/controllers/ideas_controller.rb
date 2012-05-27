@@ -14,6 +14,7 @@ class IdeasController < ApplicationController
 
   def assign
     @idea = Idea.find(params[:id])
+    @assignments = @idea.writers.map {|w| w.name}
 
 #    respond_to do |format|
 #      format.html # assign.html.haml
