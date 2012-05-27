@@ -11,6 +11,7 @@
 class Idea < ActiveRecord::Base
   has_many :assignments
   has_many :writers, :through => :assignments, :dependent => :destroy
+  belongs_to :issue
   attr_accessible :headline
   accepts_nested_attributes_for :writers
   

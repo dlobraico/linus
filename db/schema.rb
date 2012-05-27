@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120527202956) do
+ActiveRecord::Schema.define(:version => 20120527205103) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "idea_id"
     t.integer  "writer_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "issue_id"
   end
 
   create_table "editors", :force => true do |t|
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20120527202956) do
     t.string   "headline"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "issue_id"
   end
 
   create_table "issues", :force => true do |t|
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20120527202956) do
     t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "issue_id"
   end
 
   create_table "writers", :force => true do |t|

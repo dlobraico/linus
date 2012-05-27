@@ -12,4 +12,5 @@
 
 class Submission < ActiveRecord::Base
   attr_accessible :body, :byline, :headline
+  belongs_to :issue
 end
