@@ -16,10 +16,14 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
     @assignments = @idea.writers.map {|w| w.name}
 
+
     respond_to do |format|
-      format.js {render :layout => false}
-      #format.html # assign.html.haml
-      #format.json { render json: @idea }
+      if true
+        format.html { render layout: 'popup'}
+      else
+        format.html # assign.html.haml
+        format.json { render json: @idea }
+      end
     end
   end
 
