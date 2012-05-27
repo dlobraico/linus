@@ -36,7 +36,9 @@ class IdeasController < ApplicationController
 
     @idea.assign! hash
     respond_to do |format|
-      if @idea.save
+      if @idea.save and request.xhr?
+        format.js
+      elsif @idea.save
         format.html { redirect_to ideas_url, notice: 'Idea was successfully updated.' }
         format.json { render json: @idea, status: :assigned, location: @idea }
       else
