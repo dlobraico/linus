@@ -1,20 +1,24 @@
 %h1 Welcome to <span class="brandname">Linus</span>.
-%h2!= "We are currently working on <strong>Volume #{@current_issue.volume}</strong>, <strong>Issue #{@current_issue.issue}</strong>."
-%ul{:style => "line-height: 1.2em;"}
-  %li!= "Printer Deadline: <strong>#{@print_date}</strong>."
-  %li!= "Distribution Date: <strong>#{@dist_date}</strong>."
+- unless @current_issue.nil?
+  %h2!= "We are currently working on <strong>Volume #{@current_issue.volume}</strong>, <strong>Issue #{@current_issue.issue}</strong>."
+  %ul{:style => "line-height: 1.2em;"}
+    %li!= "Printer Deadline: <strong>#{@print_date}</strong>."
+    %li!= "Distribution Date: <strong>#{@dist_date}</strong>."
 
-%table
-  %thead
-    %tr
-      %th Ideas
-      %th Assignments
-      %th Submissions
-  %tbody
-    %tr
-      %td.ideas
-        = @ideas
-      %td.assignments
-        = @assignments
-      %td.submissions
-        = @submissions
+  %table
+    %thead
+      %tr
+        %th Ideas
+        %th Assignments
+        %th Submissions
+    %tbody
+      %tr
+        %td.ideas
+          = @ideas
+        %td.assignments
+          = @assignments
+        %td.submissions
+          = @submissions
+- if @current_issue.nil?
+  %h2!= "We are not currently working on an issue."
+
