@@ -28,6 +28,11 @@ end
 gem 'haml'
 gem 'haml-rails'
 #gem 'haml_coffee_assets'
+#
+gem 'sass-rails',   '~> 3.2.3'
+gem 'coffee-rails', '~> 3.2.1'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'rails-backbone'
 gem 'facebox-rails'
