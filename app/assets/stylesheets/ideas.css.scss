@@ -104,23 +104,29 @@ body.ideas {
     }
   }
 
-  .popup_container {
-    h1 {
-      font-size: 20px;
+  #facebox {
+    a.close {
+      border: none;
     }
-    h2 {
-      font-size: 16px;
-    }
-    form {
-      input[type="text"] {
-        font-size: 16px;
-        margin-bottom: 2px;
-        width: 95%;
-        @include sexy-input-field;
-        @include input-field-box-shadow;
+    .popup_container {
+      h1 {
+        font-size: 20px;
       }
-      input[type="submit"] {
-        float: right;
+      h2 {
+        font-size: 16px;
+      }
+      form {
+        input[type="text"] {
+          font-size: 16px;
+          margin-bottom: 2px;
+          width: 95%;
+          @include sexy-input-field;
+          @include input-field-box-shadow;
+        }
+        input[type="submit"] {
+          float: right;
+          font-size: 18px;
+        }
       }
     }
   }
