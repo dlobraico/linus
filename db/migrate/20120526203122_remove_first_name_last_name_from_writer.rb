@@ -6,6 +6,6 @@ class RemoveFirstNameLastNameFromWriter < ActiveRecord::Migration
   end
 
   def down
-    raise ActiveRecord::IrreversibleMigration, "Can't recover the delete names"
+    raise ActiveRecord::IrreversibleMigration, "Can't recover the deleted names"
   end
 end
