@@ -31,6 +31,7 @@ gem 'haml-rails'
 
 gem 'rails-backbone'
 gem 'facebox-rails'
+gem 'wysihtml5-rails'
 
 # Using a fork below until this pull request allowing multiple column searches gets pulled in
 # https://github.com/crowdint/rails3-jquery-autocomplete/pull/95
