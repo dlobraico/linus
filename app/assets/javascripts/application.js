@@ -22,4 +22,5 @@
 //= require backbone/linus
 //= require wysihtml5/parser_rules/simple
 //= require wysihtml5/wysihtml5
+//= require ice.min
 //= require_tree .
