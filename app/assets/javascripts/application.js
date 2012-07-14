@@ -11,8 +11,10 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require jquery.ui.autocomplete
+//= bootstrap
 //= require jquery.facebox
 //= require autocomplete-rails
 //= require underscore
@@ -20,7 +22,6 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/linus
-//= require wysihtml5/parser_rules/simple
-//= require wysihtml5/wysihtml5
+//= require hallo/hallo
 //= require ice.min
 //= require_tree .

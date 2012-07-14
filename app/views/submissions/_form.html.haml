@@ -1,4 +1,3 @@
-
 = form_for @submission do |f|
   -if @submission.errors.any?
     #error_explanation
@@ -14,16 +13,8 @@
     = f.label :byline
     = f.text_field :byline
   .field
-    = render :partial => 'wysihtml5_toolbar'
     = f.label :body
-    = f.text_area :body, :id => 'wysihtml5-textarea'
+    = f.hidden_field :body
+    %div{:id => 'submission', :class => 'editable', :contenteditable => "true", :style => "height: 400px; width: 400px; background: white;"}
   .actions
     = f.submit 'Save'
-
-:javascript
-  var editor = new wysihtml5.Editor("wysihtml5-textarea", {
-    toolbar:      "wysihtml5-toolbar",
-    stylesheets:  "/assets/wysiwyg.css",
-    parserRules:  wysihtml5ParserRules
-  });
-

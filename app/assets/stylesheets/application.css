@@ -11,5 +11,8 @@
  *= require_self
  *= require jquery.ui.autocomplete
  *= require jquery.facebox
+ *= require bootstrap
+ *= require font-awesome
+ *= require hallo/hallo
  *= require_tree .
 */
