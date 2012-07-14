@@ -15,6 +15,7 @@
   .field
     = f.label :body
     = f.hidden_field :body
-    %div{:id => 'submission', :class => 'editable', :contenteditable => "true", :style => "height: 400px; width: 400px; background: white;"}
+    %div{:id => 'submission_body_editable', :class => 'editable', :contenteditable => "true", :style => "height: 400px; width: 400px; background: white;"}
+      %p Start writing here.
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', :id => "submission_save"

@@ -19,6 +19,9 @@ jQuery(document).ready ->
       #]
   #).startTracking()
 
+  if (jQuery("#submission_body").val() != "") 
+    jQuery("#submission_body_editable").html(jQuery("#submission_body").val())
+
   jQuery(".editable").hallo
     plugins:
       halloformat: {}
@@ -33,3 +36,8 @@ jQuery(document).ready ->
 
     editable: true
     toolbar: 'halloToolbarFixed'
+
+  jQuery("#submission_body_editable").blur ->
+    jQuery("#submission_body").val(jQuery("#submission_body_editable").html())
+  #jQuery("#submission_save").button.click ->
+    #jQuery("#submission_body").html(jQuery("#submission_body_editable").html())
