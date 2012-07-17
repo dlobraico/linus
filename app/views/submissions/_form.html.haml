@@ -27,8 +27,9 @@
     %a{:id => "reject_change"}
       Reject change
 
-    %div{:id => 'submission_body_editable', :class => 'editable', :contenteditable => "true", :style => "height: 800px; width: 600px; background: white;"}
-      %p Start writing here.
+    %div{:id => 'submission_body_editable', :class => 'editable', :style => "height: 800px; width: 600px; background: white;"}
+      %p
+
   .actions
     = f.submit 'Save', :id => "submission_save"
 

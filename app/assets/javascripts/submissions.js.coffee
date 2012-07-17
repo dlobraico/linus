@@ -5,7 +5,7 @@
 window.Ice ||= {}
 
 jQuery(document).ready ->
-  if jQuery('body.submissions#edit').length > 0
+  if (jQuery('body.submissions#edit').length > 0) || (jQuery('body.submissions#new').length > 0)
     Ice.tracker = new ice.InlineChangeEditor(
       element: document.getElementById('submission_body_editable')
       handleEvents: true
