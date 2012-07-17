@@ -1,4 +1,6 @@
 class SubmissionsController < ApplicationController
+  before_filter :authenticate_editor!
+
   # GET /submissions
   # GET /submissions.json
   def index

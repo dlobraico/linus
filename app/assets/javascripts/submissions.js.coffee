@@ -2,42 +2,71 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+window.Ice ||= {}
+
 jQuery(document).ready ->
-  #tracker = new ice.InlineChangeEditor(
-    #element: document.getElementById("submission")
-    #handleEvents: true
-    #currentUser:
-      #id: 1
-      #name: "DJ LoBraico"
+  if jQuery('body.submissions#edit').length > 0
+    Ice.tracker = new ice.InlineChangeEditor(
+      element: document.getElementById('submission_body_editable')
+      handleEvents: true
+      #currentUser:
+        #id: 0
+        #name: "Default User"
+      plugins: [ 
+        "IceAddTitlePlugin", 
+        "IceSmartQuotesPlugin",
+        "IceEmdashPlugin",
+        name: "IceCopyPastePlugin"
+        settings:
+          pasteType: 'formattedClean'
+          preserve: "p,a[href],span[id,class]em,strong"
+      ]
+    ).startTracking()
 
-      #plugins: [ 
-        #"IceAddTitlePlugin", 
-        #"IceEmdashPlugin",
-        #name: "IceCopyPastePlugin"
-        #settings:
-          #preserve: "p,a[href],span[id,class]em,strong"
-      #]
-  #).startTracking()
+    Ice.tracker.setCurrentUser
+      id: 0
+      name: "Default User"
 
-  if (jQuery("#submission_body").val() != "") 
-    jQuery("#submission_body_editable").html(jQuery("#submission_body").val())
+    console.log(Ice.tracker)
 
-  jQuery(".editable").hallo
-    plugins:
-      halloformat: {}
-      hallojustify: {}
-      #hallolists: {}
-      #halloheadings: {}
-      #halloindicator: {}
-      #halloblock: {}
-      #hallolink: {}
-      #halloreundo: {}
-      #halloimage: {}
+    jQuery("#toggle_changes").click ->
+      body = document.getElementById("submission_body_editable")
+      if $(body).hasClass("CT-hide")
+        $(body).removeClass "CT-hide"
+      else
+        $(body).addClass "CT-hide"
 
-    editable: true
-    toolbar: 'halloToolbarFixed'
+    jQuery("#accept_all").click ->
+      Ice.tracker.acceptAll()
 
-  jQuery("#submission_body_editable").blur ->
-    jQuery("#submission_body").val(jQuery("#submission_body_editable").html())
-  #jQuery("#submission_save").button.click ->
-    #jQuery("#submission_body").html(jQuery("#submission_body_editable").html())
+    jQuery("#reject_all").click ->
+      Ice.tracker.rejectAll()
+
+    jQuery("#acceptChange").click ->
+      Ice.tracker.acceptChange()
+
+    jQuery("#rejectChange").click ->
+      Ice.tracker.rejectChange()
+
+    if (jQuery("#submission_body").val() != "") 
+      jQuery("#submission_body_editable").html(jQuery("#submission_body").val())
+
+    jQuery(".editable").hallo
+      plugins:
+        halloformat: {}
+        hallojustify: {}
+        #hallolists: {}
+        #halloheadings: {}
+        #halloindicator: {}
+        #halloblock: {}
+        #hallolink: {}
+        #halloreundo: {}
+        #halloimage: {}
+
+      editable: true
+      #toolbar: 'halloToolbarFixed'
+
+    jQuery("#submission_body_editable").blur ->
+      jQuery("#submission_body").val(jQuery("#submission_body_editable").html())
+    jQuery("#submission_save").click ->
+      jQuery("#submission_body").val(jQuery("#submission_body_editable").html())

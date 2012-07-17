@@ -1,10 +1,9 @@
 class EditorsController < ApplicationController
   before_filter :authenticate_editor!
+
   # GET /editors
   # GET /editors.json
   def index
-    authorize! :index, @editor, :message => 'Not authorized as an administrator.'
-
     @editors = Editor.all
 
     respond_to do |format|

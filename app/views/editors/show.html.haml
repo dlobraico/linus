@@ -7,9 +7,12 @@
   %b Last name:
   = @editor.last_name
 %p
+  %b Email:
+  = @editor.email
+%p
   %b Username:
   = @editor.username
 
-= link_to 'Edit', edit_editor_path(@editor)
-\|
+-#= link_to 'Edit', edit_editor_path(@editor)
+-#\|
 = link_to 'Back', editors_path

@@ -15,7 +15,27 @@
   .field
     = f.label :body
     = f.hidden_field :body
-    %div{:id => 'submission_body_editable', :class => 'editable', :contenteditable => "true", :style => "height: 400px; width: 400px; background: white;"}
+
+    %a{:id => "toggle_changes"}
+      Show/Hide Changes
+    %a{:id => "accept_all"}
+      Accept all changes
+    %a{:id => "reject_all"}
+      Reject all changes
+    %a{:id => "accept_change"}
+      Accept change
+    %a{:id => "reject_change"}
+      Reject change
+
+    %div{:id => 'submission_body_editable', :class => 'editable', :contenteditable => "true", :style => "height: 800px; width: 600px; background: white;"}
       %p Start writing here.
   .actions
     = f.submit 'Save', :id => "submission_save"
+
+:javascript
+  jQuery(document).ready(function() {
+    Ice.tracker.setCurrentUser({
+      id: "#{current_editor.id}",
+      name: "#{current_editor.name}"
+    });
+  });
