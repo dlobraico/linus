@@ -1,23 +1,22 @@
-%h1 Listing submissions
+- unless @submissions.empty?
+  %table
+    %thead
+      %th Headline
+      %th Byline
+      %th Body
+      %th
+      %th
+      %th
+    %tbody
+      - @submissions.each do |submission|
+        %tr{:class => cycle("odd", "even")}
+          %td= submission.headline
+          %td= submission.byline
+          %td= submission.body
+          %td= link_to 'View', submission
+          %td= link_to 'Edit', edit_submission_path(submission)
+          %td= link_to 'Delete', submission, :confirm => 'Are you sure?', :method => :delete
 
-%table
-  %tr
-    %th Headline
-    %th Byline
-    %th Body
-    %th
-    %th
-    %th
-
-  - @submissions.each do |submission|
-    %tr
-      %td= submission.headline
-      %td= submission.byline
-      %td= submission.body
-      %td= link_to 'Show', submission
-      %td= link_to 'Edit', edit_submission_path(submission)
-      %td= link_to 'Destroy', submission, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Submission', new_submission_path
+- if @submissions.empty?
+  %h1 No submissions right now.
+  %h2!= "Why not ask the staff to make some on the #{link_to "submissions page", new_submission_path}?"

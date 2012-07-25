@@ -23,41 +23,27 @@ body.submissions {
         text-decoration: none;
       }
 
-      .del {
-        text-decoration: line-through;
-      }
-      .ins {
-        text-decoration: underline;
-      }
-      .cts-1 {
-        color: green;
-      }
-      .cts-2 {
-        color: #C02000;
-      }
+      .del { text-decoration: line-through; }
+      .ins { text-decoration: underline; }
+      .cts-1 { color: green; }
+      .cts-2 { color: #C02000; }
+      .cts-3 { color: #004090; }
+      .cts-4 { color: #F06000; }
+      .cts-5 { color: purple; }
+      .cts-6 { color: #801080; }
+      .cts-7 { color: #1080B0; }
+      .ice-avoid { color: red; }
+    }
 
-      .cts-3 {
-        color: #004090;
-      }
-
-      .cts-4 {
-        color: #F06000;
-      }
-
-      .cts-5 {
-        color: purple;
-      }
-
-      .cts-6 {
-        color: #801080;
-      }
-
-      .cts-7 {
-        color: #1080B0;
-      }
-
-      .ice-avoid {
-        color: red;
+    table {
+      width: 100%;
+      tr {
+        &.odd { background-color: #FFF; }
+        &.even { background-color: #EEE; }
+        td {
+          padding: 4px;
+          &#submission { width: 70%; }
+        }
       }
     }
   }

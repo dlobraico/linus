@@ -23,12 +23,6 @@ jQuery(document).ready ->
       ]
     ).startTracking()
 
-    Ice.tracker.setCurrentUser
-      id: 0
-      name: "Default User"
-
-    console.log(Ice.tracker)
-
     jQuery("#toggle_changes").click ->
       body = document.getElementById("submission_body_editable")
       if $(body).hasClass("CT-hide")
@@ -64,7 +58,7 @@ jQuery(document).ready ->
         #halloimage: {}
 
       editable: true
-      #toolbar: 'halloToolbarFixed'
+      toolbar: 'halloToolbarFixed'
 
     jQuery("#submission_body_editable").blur ->
       jQuery("#submission_body").val(jQuery("#submission_body_editable").html())
