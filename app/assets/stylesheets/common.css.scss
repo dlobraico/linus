@@ -101,8 +101,13 @@ body {
       ul {
         position: absolute;
         top: 10px;
-        left: 90px;
         clear: both;
+        &#main {
+          left: 90px;
+        }
+        &#session {
+          right: 10px;
+        }
         li {
           padding-right: 10px;
           display: inline;

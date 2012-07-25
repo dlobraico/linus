@@ -1,7 +1,7 @@
 %nav#navbar
   #branding
     %span.brandname Linus
-  %ul
+  %ul#main
     %li#status-nav
       = link_to 'Status', '/'
     %li#ideas-nav
@@ -14,3 +14,7 @@
       = link_to 'Articles', '/' #articles_path
     %li#preferences-nav
       = link_to 'Preferences', '/' #editors_path
+
+  %ul#session
+    %li#session-nav
+      = session_link

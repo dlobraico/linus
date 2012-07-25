@@ -17,7 +17,6 @@ Linus::Application.routes.draw do
   end
   resources :writers
   resources :submissions
-  resources :editors, :only => [:show, :index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -69,7 +68,7 @@ Linus::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
 
-  authenticated :user do
+  authenticated :editor do
     root :to => 'home#index'
   end
 
