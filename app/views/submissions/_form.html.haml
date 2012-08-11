@@ -1,42 +1,44 @@
-= form_for @submission do |f|
-  -if @submission.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@submission.errors.count, "error")} prohibited this submission from being saved:"
-      %ul
-        - @submission.errors.full_messages.each do |msg|
-          %li= msg
+#submit_form
+  = form_for @submission do |f|
+    -if @submission.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@submission.errors.count, "error")} prohibited this submission from being saved:"
+        %ul
+          - @submission.errors.full_messages.each do |msg|
+            %li= msg
 
-  .field
-    = f.label :headline
-    = f.text_field :headline
-  .field
-    = f.label :byline
-    = f.text_field :byline
-  .field
-    = f.label :body
-    = f.hidden_field :body
+    .field
+      = f.text_field :headline, :placeholder => "Headline"
+    .field
+      = f.text_field :byline, :placeholder => "Byline"
+    .field
+      = f.hidden_field :body
 
-    %a{:id => "toggle_changes"}
-      Show/Hide Changes
-    %a{:id => "accept_all"}
-      Accept all changes
-    %a{:id => "reject_all"}
-      Reject all changes
-    %a{:id => "accept_change"}
-      Accept change
-    %a{:id => "reject_change"}
-      Reject change
+      %div{:id => 'editor' }
+        %div{:id => 'submission_body_editable_wrapper'}
+          %div{:id => 'submission_body_editable', :class => 'editable'}
+            %p
 
-    %div{:id => 'submission_body_editable', :class => 'editable', :style => "height: 800px; width: 600px; background: white;"}
-      %p
+    .actions
+      = f.submit 'Save', :id => "submission_save"
+      
+    %ul#ice_actions
+      %li
+        %a{:id => "toggle_changes"} Show/Hide Changes
+      %li
+        %a{:id => "accept_all"} Accept all changes
+      %li
+        %a{:id => "reject_all"} Reject all changes
+      %li
+        %a{:id => "accept_change"} Accept change
+      %li
+        %a{:id => "reject_change"} Reject change
 
-  .actions
-    = f.submit 'Save', :id => "submission_save"
 
-:javascript
-  jQuery(document).ready(function() {
-    Ice.tracker.setCurrentUser({
-      id: "#{current_editor.id}",
-      name: "#{current_editor.name}"
+  :javascript
+    jQuery(document).ready(function() {
+      Ice.tracker.setCurrentUser({
+        id: "#{current_editor.id}",
+        name: "#{current_editor.name}"
+      });
     });
-  });

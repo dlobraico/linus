@@ -19,7 +19,7 @@ jQuery(document).ready ->
         name: "IceCopyPastePlugin"
         settings:
           pasteType: 'formattedClean'
-          preserve: "p,a[href],span[id,class]em,strong"
+          preserve: "p,a[href],span[id,class],em,strong"
       ]
     ).startTracking()
 
@@ -36,10 +36,10 @@ jQuery(document).ready ->
     jQuery("#reject_all").click ->
       Ice.tracker.rejectAll()
 
-    jQuery("#acceptChange").click ->
+    jQuery("#accept_change").click ->
       Ice.tracker.acceptChange()
 
-    jQuery("#rejectChange").click ->
+    jQuery("#reject_change").click ->
       Ice.tracker.rejectChange()
 
     if (jQuery("#submission_body").val() != "") 
@@ -58,7 +58,7 @@ jQuery(document).ready ->
         #halloimage: {}
 
       editable: true
-      toolbar: 'halloToolbarFixed'
+      #toolbar: 'halloToolbarFixed'
 
     jQuery("#submission_body_editable").blur ->
       jQuery("#submission_body").val(jQuery("#submission_body_editable").html())
