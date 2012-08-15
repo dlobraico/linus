@@ -36,9 +36,35 @@
 
 
   :javascript
+    $(function() {
+        var text = document.getElementById('submission_body_editable');
+        window.tracker = new ice.InlineChangeEditor({
+            element: text,
+            handleEvents: true,
+            plugins : ['IceAddTitlePlugin', 'IceSmartQuotesPlugin', 'IceEmdashPlugin', {
+                name : 'IceCopyPastePlugin',
+                settings : {
+                    pasteType : 'formattedClean',
+                    preserve : 'p,a[href],i,em,b,strong,span[id,class]'
+                }
+            }]
+        }).startTracking();
+    });
     jQuery(document).ready(function() {
-      Ice.tracker.setCurrentUser({
+      tracker.setCurrentUser({
         id: "#{current_editor.id}",
         name: "#{current_editor.name}"
+      });
+      jQuery("#accept_all").mousedown(function() {
+        return tracker.acceptAll();
+      });
+      jQuery("#reject_all").mousedown(function() {
+        return tracker.rejectAll();
+      });
+      jQuery("#accept_change").mousedown(function() {
+        return tracker.acceptChange();
+      });
+      jQuery("#reject_change").mousedown(function() {
+        return tracker.rejectChange();
       });
     });
