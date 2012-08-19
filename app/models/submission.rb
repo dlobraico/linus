@@ -14,6 +14,7 @@ class Submission < ActiveRecord::Base
   resourcify
   attr_accessible :body, :byline, :headline
   belongs_to :issue
+  belongs_to :writer
 
   before_validation :sanitize_body, :on => :create
   before_validation :sanitize_body, :on => :update

@@ -12,7 +12,7 @@
         %tr{:class => cycle("odd", "even")}
           %td= submission.headline
           %td= submission.byline
-          %td= submission.writer
+          %td= submission.writer.name
           %td= link_to 'View', submission
           %td= link_to 'Edit', edit_submission_path(submission)
           %td= link_to 'Delete', submission, :confirm => 'Are you sure?', :method => :delete
