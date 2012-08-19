@@ -1,0 +1,25 @@
+%h1 Listing issues
+
+%table
+  %tr
+    %th Volume
+    %th Issue
+    %th Printing Deadline
+    %th Distribution Date
+    %th
+    %th
+    %th
+
+  - @issues.each do |issue|
+    %tr
+      %td= issue.volume
+      %td= issue.issue
+      %td= issue.printing_deadline
+      %td= issue.distribution
+      %td= link_to 'Show', issue
+      %td= link_to 'Edit', edit_issue_path(issue)
+      %td= link_to 'Destroy', issue, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Issue', new_issue_path
