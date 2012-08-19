@@ -2,9 +2,26 @@ class Ability
   include CanCan::Ability
 
   def initialize(editor)
-    editor ||= Editor.new 
-    if editor.has_role? :admin
+    editor ||= Editor.new
+    if editor.has_role? :super_admin
       can :manage, :all
+    else if editor.has_role? :editor_in_chief
+      can :manage, :all
+    else if editor.has_role? :managing_editor
+      can :read, :all
+      can :write, :issue
+    else if editor.has_role? :head_copy_editor
+      can :manage, :submissions
+      can :read, :ideas
+    else if editor.has_role? :copy_editor
+      can :write, :submissions
+    else if editor.has_role? :secretary
+      can :manage, :ideas
+      can :manage, :assignments
+    else if editor.has_role? :layout_editor
+      can :read, :all
+    else
+      can :read, :ideas
     end
     # Define abilities for the passed in user here. For example:
     #

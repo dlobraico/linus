@@ -11,6 +11,7 @@
 #
 
 class Submission < ActiveRecord::Base
+  resourcify
   attr_accessible :body, :byline, :headline
   belongs_to :issue
 

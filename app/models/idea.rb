@@ -9,6 +9,7 @@
 #
 
 class Idea < ActiveRecord::Base
+  resourcify
   has_many :assignments
   has_many :writers, :through => :assignments, :dependent => :destroy
   belongs_to :issue

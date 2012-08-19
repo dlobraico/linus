@@ -1,11 +1,12 @@
 class Issue < ActiveRecord::Base
+  resourcify
   has_many :ideas
   has_many :assignments
   has_many :submissions
 
   attr_accessible :distribution, :issue, :printing_deadline, :volume
 
-  def is_next? 
+  def is_next?
     if self == Issue.next_issue
       return true
     else

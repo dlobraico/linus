@@ -10,7 +10,7 @@
 #
 
 class Writer < ActiveRecord::Base
-  has_many :assignments 
+  has_many :assignments
   has_many :ideas, :through => :assignments, :dependent => :nullify
   attr_accessible :name, :email
 

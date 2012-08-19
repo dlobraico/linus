@@ -25,6 +25,6 @@ class Editor < ActiveRecord::Base
   validates_uniqueness_of :username, :email, :case_sensitive => false
 
   def name
-    "#{first_name} #{last_name}" 
+    "#{first_name} #{last_name}"
   end
 end
