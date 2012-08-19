@@ -1,0 +1,6 @@
+* Tasks: Linus
+** Submissions
+   - add an "add submission" page for writers to make submissions
+     
+** Issues
+   - add basic scaffolding for issues
