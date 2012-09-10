@@ -3,7 +3,10 @@ Linus::Application.routes.draw do
 
   get "home/index"
 
-  resources :assignments
+  resources :assignments do
+    resources :submissions
+  end
+
   resources :issues
 
   resources :ideas do
@@ -22,6 +25,7 @@ Linus::Application.routes.draw do
   end
 
   resources :submissions
+  #match 'submit' => 'submissions#submit'
 
 
   # The priority is based upon order of creation:

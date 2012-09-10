@@ -1,5 +1,6 @@
 * Tasks: Linus
 ** Submissions
+*** TODO writers for submissions
 *** TODO add an "add submission" page for writers to make submissions
 *** TODO add a notion of status to submissions
     A submission with a status of "published" or something similar

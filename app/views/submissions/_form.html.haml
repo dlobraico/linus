@@ -1,5 +1,5 @@
 #submit_form
-  = form_for @submission do |f|
+  = nested_form_for @submission do |f|
     -if @submission.errors.any?
       #error_explanation
         %h2= "#{pluralize(@submission.errors.count, "error")} prohibited this submission from being saved:"
@@ -11,6 +11,9 @@
       = f.text_field :headline, :placeholder => "Headline"
     .field
       = f.text_field :byline, :placeholder => "Byline"
+    .field
+      = f.label "Writer: "
+      = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
     .field
       = f.hidden_field :body
 

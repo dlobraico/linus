@@ -12,7 +12,7 @@
 
 class Submission < ActiveRecord::Base
   resourcify
-  attr_accessible :body, :byline, :headline
+  attr_accessible :body, :byline, :headline, :writer_id
   belongs_to :issue
   belongs_to :writer
 
