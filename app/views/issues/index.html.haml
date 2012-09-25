@@ -1,4 +1,4 @@
-%h1 Listing issues
+%h1 Issues
 
 %table
   %tr
@@ -14,8 +14,8 @@
     %tr
       %td= issue.volume
       %td= issue.issue
-      %td= issue.printing_deadline
-      %td= issue.distribution
+      %td= issue.printing_deadline.strftime "%X, %Y %B %d"
+      %td= issue.distribution.strftime "%X, %Y %B %d"
       %td= link_to 'Show', issue
       %td= link_to 'Edit', edit_issue_path(issue)
       %td= link_to 'Destroy', issue, :confirm => 'Are you sure?', :method => :delete
