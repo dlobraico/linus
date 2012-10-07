@@ -28,6 +28,12 @@ class SubmissionsController < ApplicationController
   def new
     @submission = Submission.new
 
+    unless params["assignment_id"].nil?
+      assignment = Assignment.find(params["assignment_id"])
+      @submission.headline = assignment.idea.headline
+      @submission.writer = Writer.find(assignment.writer)
+    end
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @submission }

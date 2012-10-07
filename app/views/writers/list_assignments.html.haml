@@ -1,0 +1,8 @@
+#list-assignments
+  %h1 Assignments
+  %h2= @writer.name
+  %table
+    - @assignments.each do |a|
+      %tr
+        %td= a.idea.headline
+        %td= link_to "Submit", make_submission_path

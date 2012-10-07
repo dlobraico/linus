@@ -24,4 +24,5 @@
 //= require backbone/linus
 //= require hallo/hallo
 //= require ice.min
+//= require jquery_nested_form
 //= require_tree .

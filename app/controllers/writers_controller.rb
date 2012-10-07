@@ -21,6 +21,16 @@ class WritersController < ApplicationController
     end
   end
 
+  def list_assignments
+    @writer = Writer.find(params[:id])
+    @assignments = @writer.assignments
+
+    respond_to do |format|
+      format.html # list_assignments.html.erb
+      format.json { render json: @assignments }
+    end
+  end
+
   # GET /writers/new
   # GET /writers/new.json
   def new

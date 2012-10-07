@@ -4,12 +4,14 @@
       %th Headline
       %th Writer
       %th 
+      %th
     %tbody
       - @assignments.each do |a|
         %tr{:class => cycle("odd", "even"), :id => "idea-#{a.id}"}
           %td.idea= Idea.find(a.idea_id).headline
           %td.writer= Writer.find(a.writer_id).name
           %td.actions= link_to "Unassign", a, :confirm => "Are you sure?", :remote => true, :method => :delete
+          %td.actions= link_to "Submit", new_assignment_submission_path(a)
 
 - if @assignments.empty?
   %h1 No assignments right now.

@@ -19,20 +19,18 @@ class IdeasController < ApplicationController
 
     respond_to do |format|
       if request.xhr?
-        format.html { render layout: 'popup'} 
+        format.html { render layout: 'popup'}
       else
         format.html # assign.html.haml
       end
-      format.js 
+      format.js
     end
   end
 
   def update_assignment
     @idea = Idea.find(params[:id])
-    hash = {
-             email: params[:idea][:writer][:email], 
-             name: params[:idea][:writer][:name]
-          }
+    hash = { email: params[:idea][:writer][:email],
+             name: params[:idea][:writer][:name] }
 
     @idea.assign! hash
     respond_to do |format|

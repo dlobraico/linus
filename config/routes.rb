@@ -3,9 +3,11 @@ Linus::Application.routes.draw do
 
   get "home/index"
 
-  #get "assignments/index"
-  #get "assignments/show"
-  resources :assignments
+  resources :assignments do
+    resources :submissions
+  end
+
+  resources :issues
 
   resources :ideas do
     member do
@@ -15,9 +17,16 @@ Linus::Application.routes.draw do
     get :autocomplete_writer_name, :on => :collection
     get :autocomplete_writer_email, :on => :collection
   end
-  resources :writers
+
+  resources :writers do
+    member do
+      get 'list_assignments'
+    end
+  end
+
   resources :submissions
-  resources :issues
+  #match 'submit' => 'submissions#submit'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

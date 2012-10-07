@@ -1,5 +1,8 @@
 * Tasks: Linus
 ** Submissions
+*** DONE writers for submissions
+*** TODO multiple writers for submissions?
+*** TODO the ability to add a new writer from the submission page
 *** TODO add an "add submission" page for writers to make submissions
 *** TODO add a notion of status to submissions
     A submission with a status of "published" or something similar
@@ -10,10 +13,10 @@
     track submissions through the entire process? That is, new,
     editing, copy_editing, etc.? Or would it be better to leave these
     sort of statuses to be a part of the Issue model?
-     
+    
 ** Issues
 *** TODO Potentially add status to Issues... see comment in submissions for details
-*** TODO add basic scaffolding for issues
-     
+*** DONE add basic scaffolding for issues
+    
 ** Miscellaneous 
 *** TODO Gemify hallo.js
