@@ -6,5 +6,16 @@
         - @issue.errors.full_messages.each do |msg|
           %li= msg
 
+  .field 
+    = f.text_field :volume, :placeholder => "V"
+  .field
+    = f.text_field :issue, :placeholder => "I"
+  .field
+    = f.label :printing_deadline
+    = f.text_field :printing_deadline
+  .field
+    = f.label :distribution
+    = f.text_field :distribution
+  
   .actions
     = f.submit 'Save'

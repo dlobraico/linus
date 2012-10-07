@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: issues
+#
+#  id                :integer          not null, primary key
+#  volume            :integer
+#  issue             :integer
+#  printing_deadline :datetime
+#  distribution      :datetime
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Issue do
