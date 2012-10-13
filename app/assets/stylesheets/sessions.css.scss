@@ -1,0 +1,13 @@
+@import 'mixins.css.scss';
+
+body.sessions {
+    .container {
+        background: $container_bg;
+        padding: 20px;
+        margin-bottom: 40px;
+        .form {
+            width: 200px;
+            margin: 0 auto; 
+        }
+    }
+}
