@@ -1,10 +1,15 @@
-%h1 Listing editors
+%h1 Editors
+= link_to "All Editors", :action => "index"
+| 
+= link_to "Editors awaiting approval", :action => "index", :approved => "false"
 
 %table
   %tr
     %th First name
     %th Last name
-    %th Username
+    %th Email Address
+    %th Roles
+    %th Approved?
     %th
     -#%th
     %th
@@ -13,11 +18,9 @@
     %tr
       %td= editor.first_name
       %td= editor.last_name
-      %td= editor.username
-      %td= link_to 'Show', editor
-      -#%td= link_to 'Edit', edit_editor_path(editor)
+      %td= editor.email
+      %td= editor.roles.map {|x| x.name}.join ", "
+      %td= editor.approved
+      -#%td= link_to 'Show', editor
+      %td= link_to 'Edit', edit_editor_path(editor)
       %td= link_to 'Destroy', editor, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
--#= link_to 'New Editor', new_editor_path

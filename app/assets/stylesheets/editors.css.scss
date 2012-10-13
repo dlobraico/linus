@@ -1,3 +1,14 @@
 // Place all the styles related to the Editors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'mixins.css.scss';
+
+body.editors {
+  .container {
+    @include box-shadow;
+    @include border-radius;
+    background: $container_bg;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+}

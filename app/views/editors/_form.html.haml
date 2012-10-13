@@ -12,5 +12,11 @@
   .field
     = f.label :last_name
     = f.text_field :last_name
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :approved
+    = f.check_box :approved
   .actions
     = f.submit 'Save'

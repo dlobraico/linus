@@ -1,5 +1,6 @@
 Linus::Application.routes.draw do
   devise_for :editors
+  resources :editors
 
   get "home/index"
 

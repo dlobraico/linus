@@ -4,7 +4,11 @@ class EditorsController < ApplicationController
   # GET /editors
   # GET /editors.json
   def index
-    @editors = Editor.all
+    if params[:approved] == "false"
+      @editors = Editor.find_all_by_approved(false)
+    else
+      @editors = Editor.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
