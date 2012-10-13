@@ -1,4 +1,5 @@
 class AssignmentsController < ApplicationController
+  before_filter :authenticate_editor!
 
   # GET /assignments
   # GET /assignments.json
