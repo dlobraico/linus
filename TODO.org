@@ -20,3 +20,7 @@
     
 ** Miscellaneous 
 *** TODO Gemify hallo.js
+*** TODO Handle the notion of "current issue" better. 
+    Right now, the create method for the Idea and Submission models simply 
+    force sets @thing.issue = Issue.next_issue, which is probably the wrong 
+    way to do things in some small set of cases.

@@ -49,6 +49,7 @@ class SubmissionsController < ApplicationController
   # POST /submissions.json
   def create
     @submission = Submission.new(params[:submission])
+    @submission.issue = Issue.next_issue
 
     respond_to do |format|
       if @submission.save

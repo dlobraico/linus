@@ -78,6 +78,7 @@ class IdeasController < ApplicationController
   # POST /ideas.json
   def create
     @idea = Idea.new(params[:idea].slice(:headline))
+    @idea.issue = Issue.next_issue
 
     respond_to do |format|
       if @idea.save
