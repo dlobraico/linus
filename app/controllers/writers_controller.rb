@@ -1,4 +1,5 @@
 class WritersController < ApplicationController
+  before_filter :authenticate_editor!
   # GET /writers
   # GET /writers.json
   def index
