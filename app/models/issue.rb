@@ -10,7 +10,8 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
-
+# TODO: Rename the printing_deadline field to submission_deadline. 
+# Or perhaps add an independent submission deadline.
 class Issue < ActiveRecord::Base
   resourcify
   has_many :ideas
@@ -33,5 +34,9 @@ class Issue < ActiveRecord::Base
 
   def self.next_issue
     self.upcoming_issues.first
+  end
+
+  def submission_deadline 
+    printing_deadline
   end
 end

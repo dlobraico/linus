@@ -91,4 +91,9 @@ class WritersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def send_reminder
+    writer = Writer.find(params[:id])
+    WriterMailer.assignment_reminder(writer).deliver
+  end
 end
