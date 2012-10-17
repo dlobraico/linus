@@ -29,12 +29,13 @@ default_run_options[:pty]         = true
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
-before "deploy:assets:precompile", "deploy:symlink_db"
+before "deploy:assets:precompile", "deploy:symlink_config"
 
 namespace :deploy do
-  desc "Symlinks the database.yml"
-  task :symlink_db, :roles => :app do
+  desc "Symlinks the database.yml and application.yml files"
+  task :symlink_config, :roles => :app do
     run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/application.yml #{latest_release}/config/application.yml"
   end
   task :start do ; end
   task :stop do ; end
