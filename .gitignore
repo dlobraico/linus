@@ -18,3 +18,4 @@
 
 public/assets
 config/database.yml
+config/external_config.yml
