@@ -13,6 +13,7 @@
       %td= writer.name
       %td= writer.email
       %td= link_to 'Assignments', :action => "index", :controller => "assignments", :writer => writer
+      %td= link_to 'Send Reminder', send_reminder_path(writer)
       %td= link_to 'Edit', edit_writer_path(writer)
       %td= link_to 'Destroy', writer, :confirm => 'Are you sure?', :method => :delete
 

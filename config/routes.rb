@@ -22,6 +22,7 @@ Linus::Application.routes.draw do
   resources :writers do
     member do
       get 'list_assignments'
+      get 'send_reminder'
     end
   end
 

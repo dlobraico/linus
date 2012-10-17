@@ -5,6 +5,7 @@ class WriterMailer < ActionMailer::Base
     @writer = writer
     @assignments = writer.assignments
     @current_issue = Issue.next_issue
-    mail(:to => writer.email, :subject => "[Chicago Shady Dealer] Assignment Reminder")
+    to = "#{writer.name} <#{writer.email}>"
+    mail(:to => to, :subject => "[Chicago Shady Dealer] Assignment Reminder")
   end
 end
