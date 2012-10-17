@@ -73,8 +73,8 @@ Linus::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'chicagoshadydealer.com',
-    :user_name            => EXTERNAL_CONFIG.mail.user,
-    :password             => EXTERNAL_CONFIG.mail.password,
+    :user_name            => CONFIG["mail"]["user"],
+    :password             => CONFIG["mail"]["password"],
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 end
