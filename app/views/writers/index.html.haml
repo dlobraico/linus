@@ -1,5 +1,7 @@
-%h1 Writers
-
+%h1 
+  Writers
+  &mdash;
+  = link_to 'Remind All', remind_all_writers_path, :remote => true
 %table
   %tr
     %th Name
@@ -13,7 +15,7 @@
       %td= writer.name
       %td= writer.email
       %td= link_to 'Assignments', :action => "index", :controller => "assignments", :writer => writer
-      %td= link_to 'Send Reminder', send_reminder_path(writer)
+      %td= link_to 'Send Reminder', remind_writer_path(writer), :remote => true
       %td= link_to 'Edit', edit_writer_path(writer)
       %td= link_to 'Destroy', writer, :confirm => 'Are you sure?', :method => :delete
 

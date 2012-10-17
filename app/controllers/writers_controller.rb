@@ -92,8 +92,26 @@ class WritersController < ApplicationController
     end
   end
 
-  def send_reminder
+  def remind
     writer = Writer.find(params[:id])
     WriterMailer.assignment_reminder(writer).deliver
+
+    respond_to do |format|
+      format.html { render :nothing => true }
+      format.json { head :no_content }
+    end
+  end
+
+  def remind_all
+    Writer.all.each do |writer|
+      unless writer.assignments.empty?
+        WriterMailer.assignment_reminder(writer).deliver
+      end
+    end
+
+    respond_to do |format|
+      format.html { render :nothing => true }
+      format.json { head :no_content }
+    end
   end
 end

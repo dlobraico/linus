@@ -22,8 +22,9 @@ Linus::Application.routes.draw do
   resources :writers do
     member do
       get 'list_assignments'
-      get 'send_reminder'
+      get 'remind'
     end
+    get 'remind_all', :on => :collection
   end
 
   resources :submissions
