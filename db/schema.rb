@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013204449) do
+ActiveRecord::Schema.define(:version => 20121020224712) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "idea_id"
@@ -87,14 +87,24 @@ ActiveRecord::Schema.define(:version => 20121013204449) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
+  create_table "statuses", :force => true do |t|
+    t.text     "desc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "submissions", :force => true do |t|
     t.string   "headline"
     t.string   "byline"
     t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.integer  "issue_id"
-    t.string   "writer_id"
+    t.integer  "writer_id",     :limit => 255
+    t.integer  "assignment_id"
+    t.boolean  "copyedited"
+    t.boolean  "edited"
+    t.boolean  "published"
   end
 
   create_table "writers", :force => true do |t|

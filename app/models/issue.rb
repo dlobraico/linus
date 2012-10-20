@@ -9,6 +9,20 @@
 #  distribution      :datetime
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  status            :string(255)
+#
+
+# == Schema Information
+#
+# Table name: issues
+#
+#  id                :integer          not null, primary key
+#  volume            :integer
+#  issue             :integer
+#  printing_deadline :datetime
+#  distribution      :datetime
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
 #
 # TODO: Rename the printing_deadline field to submission_deadline. 
 # Or perhaps add an independent submission deadline.

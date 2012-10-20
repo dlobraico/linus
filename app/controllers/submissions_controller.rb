@@ -32,6 +32,8 @@ class SubmissionsController < ApplicationController
       assignment = Assignment.find(params["assignment_id"])
       @submission.headline = assignment.idea.headline
       @submission.writer = Writer.find(assignment.writer)
+      @submission.assignment = assignment
+      @submission.issue = Issue.next_issue
     end
 
     respond_to do |format|

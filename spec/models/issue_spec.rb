@@ -9,6 +9,7 @@
 #  distribution      :datetime
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  status            :string(255)
 #
 
 require 'spec_helper'

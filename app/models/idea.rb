@@ -16,7 +16,7 @@ class Idea < ActiveRecord::Base
   belongs_to :issue
   attr_accessible :headline, :issue_id
   accepts_nested_attributes_for :writers
-  
+
   def assign!(writer)
     unless writer.is_a? Writer
       writer = Writer.find_or_create_by_email(writer)

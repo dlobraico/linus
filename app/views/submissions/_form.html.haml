@@ -14,8 +14,9 @@
     .field
       = f.label "Writer: "
       = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
-    .field
       = f.hidden_field :body
+    = f.hidden_field :assignment_id
+    = f.hidden_field :issue_id
 
       %div{:id => 'editor' }
         %div{:id => 'submission_body_editable_wrapper'}

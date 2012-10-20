@@ -2,14 +2,15 @@
 #
 # Table name: submissions
 #
-#  id         :integer          not null, primary key
-#  headline   :string(255)
-#  byline     :string(255)
-#  body       :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  issue_id   :integer
-#  writer_id  :string(255)
+#  id            :integer          not null, primary key
+#  headline      :string(255)
+#  byline        :string(255)
+#  body          :text
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  issue_id      :integer
+#  writer_id     :integer
+#  assignment_id :integer
 #
 
 require 'spec_helper'
