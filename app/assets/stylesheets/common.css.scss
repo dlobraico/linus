@@ -2,8 +2,8 @@
 
 html,
 body {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .home #status-nav, 
@@ -12,130 +12,131 @@ body {
 .submissions #submissions-nav,
 .articles #articles-nav,
 .preferences #preferences-nav {
-  a {
-    color: $active_nav_link;
-  }
+    a {
+        color: $active_nav_link;
+    }
 }
 
 div.flash {
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 40px;
-  padding: 5px;
-  @include box-shadow;
-  &#notice {
-    background-color: #DEF2DE;
-    border-color: #D3EED7;
-    color: #4AB948;
-  }
-  &#alert {
-    background-color: #F2DEDE;
-    border-color: #EED3D7;
-    color: #B94A48;
-  }
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 5px;
+    @include box-shadow;
+    &#notice {
+        background-color: #DEF2DE;
+        border-color: #D3EED7;
+        color: #4AB948;
+    }
+    &#alert {
+        background-color: #F2DEDE;
+        border-color: #EED3D7;
+        color: #B94A48;
+    }
 }
 
 body {
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.4em;
-  background: $body_bg;
-  color: $text_color;
-  -webkit-font-smoothing: antialiased;
-
-  .container {
-    max-width: 960px;
-    width: 95%;
-    margin: 0 auto;
-  }
-  
-  a {
-    font-weight: bold;
-    border-bottom: dotted 1px;
-    text-decoration: none;
+    font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    background: $body_bg;
     color: $text_color;
-    &:hover {
-      text-shadow: 0px 0px 10px #666;
+    -webkit-font-smoothing: antialiased;
+
+    .container {
+        max-width: 960px;
+        width: 95%;
+        margin: 0 auto;
     }
-    &:active {
-      color: $active_link;
-    }
-    &:visited {
-      color: $visited_link;
-    }
-  }
-
-
-  h1 {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    padding: 0 0 10px 0; 
-  }
-
-  h2 {
-    font-size: 24px;
-    font-weight: normal;
-    text-align: center;
-    padding: 0 0 6px 0;
-  }
-
-  nav {
-    &#navbar {
-      box-shadow: 0px 0px 8px #666;
-      line-height: 1em;
-      margin-top: 0;
-      margin-bottom: 40px;
-      background-color: $nav_bg;
-/*
-      background: #a3a3a3; 
-      background: -moz-linear-gradient(top, #a3a3a3 0%, #858585 100%); 
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a3a3a3), color-stop(100%,#858585)); 
-      background: -webkit-linear-gradient(top, #a3a3a3 0%,#858585 100%); 
-      background: -o-linear-gradient(top, #a3a3a3 0%,#858585 100%); 
-      background: -ms-linear-gradient(top, #a3a3a3 0%,#858585 100%); 
-      background: linear-gradient(top, #a3a3a3 0%,#858585 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a3a3a3', endColorstr='#858585',GradientType=0 );
-*/
-
-      height: 40px;
-      ul {
-        position: absolute;
-        top: 10px;
-        clear: both;
-        &#main {
-          left: 90px;
+    
+    a {
+        font-weight: bold;
+        border-bottom: dotted 1px;
+        text-decoration: none;
+        color: $text_color;
+        &:hover {
+            /*text-shadow: 0px 0px 10px #666;*/
+            border-bottom: none;
         }
-        &#session {
-          right: 10px;
+        &:active {
+            color: $active_link;
         }
-        li {
-          padding-right: 10px;
-          display: inline;
-          font-size: 18px;
-          text-shadow: 1px 1px 1px #666;
-          a {
-            font-weight: normal;
-            color: white;
-            text-decoration: none;
-            border: none;
-            &:hover {
-              color: $hover_nav_link;
-              text-shadow: none;
+        &:visited {
+            color: $visited_link;
+        }
+    }
+
+
+    h1 {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        padding: 0 0 10px 0; 
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: normal;
+        text-align: center;
+        padding: 0 0 6px 0;
+    }
+
+    nav {
+        &#navbar {
+            box-shadow: 0px 0px 8px #666;
+            line-height: 1em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            background-color: $nav_bg;
+            /*
+              background: #a3a3a3; 
+              background: -moz-linear-gradient(top, #a3a3a3 0%, #858585 100%); 
+              background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a3a3a3), color-stop(100%,#858585)); 
+              background: -webkit-linear-gradient(top, #a3a3a3 0%,#858585 100%); 
+              background: -o-linear-gradient(top, #a3a3a3 0%,#858585 100%); 
+              background: -ms-linear-gradient(top, #a3a3a3 0%,#858585 100%); 
+              background: linear-gradient(top, #a3a3a3 0%,#858585 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a3a3a3', endColorstr='#858585',GradientType=0 );
+              */
+
+            height: 40px;
+            ul {
+                position: absolute;
+                top: 10px;
+                clear: both;
+                &#main {
+                    left: 90px;
+                }
+                &#session {
+                    right: 10px;
+                }
+                li {
+                    padding-right: 10px;
+                    display: inline;
+                    font-size: 18px;
+                    text-shadow: 1px 1px 1px #666;
+                    a {
+                        font-weight: normal;
+                        color: white;
+                        text-decoration: none;
+                        border: none;
+                        &:hover {
+                            color: $hover_nav_link;
+                            text-shadow: none;
+                        }
+                    }
+                }
             }
-          }
+            #branding {
+                position: absolute;
+                top: 15px;
+                left: 10px;
+                .brandname {
+                    color: white;
+                    font-family: 'MarketingScriptRegular';
+                    font-size: 38px;
+                    text-shadow: 1px 1px 1px #999;
+                }
+            }
         }
-      }
-      #branding {
-        position: absolute;
-        top: 15px;
-        left: 10px;
-        .brandname {
-          color: white;
-          font-family: 'MarketingScriptRegular';
-          font-size: 38px;
-          text-shadow: 1px 1px 1px #999;
-        }
-      }
     }
-  }
 }

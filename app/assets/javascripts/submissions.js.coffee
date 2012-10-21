@@ -32,3 +32,4 @@ jQuery(document).ready ->
       jQuery("#submission_body").val(jQuery("#submission_body_editable").html())
     jQuery("#submission_save").click ->
       jQuery("#submission_body").val(jQuery("#submission_body_editable").html())
+      jQuery("#submission_clean_body").val(window.tracker.getCleanContent(jQuery("#submission_body_editable").html()))

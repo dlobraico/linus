@@ -10,6 +10,15 @@ body.submissions {
         background: $container_bg;
         padding: 20px;
         margin-bottom: 40px;
+        .true {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4AB948;
+        }
+        .false {
+            font-size: 1.5em;
+            color: #B94A48;
+        }
 
 
         #headline {
@@ -19,10 +28,30 @@ body.submissions {
             padding: 0;
             line-height: 14pt;
         }
+        
         #byline {
             font-size: 10pt;
             text-align: left;
             margin: 0;
+        }
+        
+        #body {
+           width: 33em; 
+           text-align: justify;
+           float: left;
+        }
+        
+        #metadata {
+            float: left;
+            width: 200px;
+            margin-left: 10px;
+            position: relative;
+            top: 30px;
+        }
+
+        #edit_link {
+            clear: both;
+            width: 20px;
         }
         
         #submit_form {
@@ -84,7 +113,6 @@ body.submissions {
                 border: 1px solid #BFBFBF;
                 padding: 40px;
                 line-height: 24px;
-                
                 width: 620px;
                 
                 #submission_body_editable {

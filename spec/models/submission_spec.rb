@@ -11,6 +11,10 @@
 #  issue_id      :integer
 #  writer_id     :integer
 #  assignment_id :integer
+#  copyedited    :boolean
+#  edited        :boolean
+#  published     :boolean
+#  clean_body    :text
 #
 
 require 'spec_helper'

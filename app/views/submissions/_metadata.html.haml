@@ -1,0 +1,10 @@
+%table#metadata
+  %tr
+    %td Copyedited:
+    %td!= boolean_to_unicode submission.copyedited
+  %tr
+    %td Edited:
+    %td!= boolean_to_unicode submission.edited
+  %tr
+    %td Published:
+    %td!= boolean_to_unicode submission.published

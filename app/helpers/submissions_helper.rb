@@ -6,4 +6,12 @@ module SubmissionsHelper
       form.text_field :byline, :placeholder => "Byline"
     end
   end
+
+  def boolean_to_unicode(bool)
+    if bool
+      "<span class='true'>&#10003;</span>"
+    else
+      "<span class='false'>&#10008;</span>"
+    end
+  end
 end
