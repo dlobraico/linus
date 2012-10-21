@@ -1,6 +1,6 @@
 %h1#headline= @submission.headline
 %h2#byline= "by #{@submission.byline}"
-#submissions_body
+%div
   #body!= @submission.clean_body
   = render :partial => 'submissions/metadata', :locals => { :submission => @submission }
 #edit_link= link_to 'Edit', edit_submission_path(@submission)
