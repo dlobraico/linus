@@ -11,6 +11,19 @@ body.submissions {
         padding: 20px;
         margin-bottom: 40px;
 
+
+        #headline {
+            font-size: 14pt;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            line-height: 14pt;
+        }
+        #byline {
+            font-size: 10pt;
+            text-align: left;
+            margin: 0;
+        }
         
         #submit_form {
             width: 700px;

@@ -19,3 +19,4 @@
 public/assets
 config/database.yml
 config/application.yml
+*.css.css
