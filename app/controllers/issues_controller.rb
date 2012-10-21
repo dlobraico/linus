@@ -15,6 +15,7 @@ class IssuesController < ApplicationController
   # GET /issues/1.json
   def show
     @issue = Issue.find(params[:id])
+    @articles = @issue.submissions.where(:published => true)
 
     respond_to do |format|
       format.html # show.html.erb

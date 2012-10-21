@@ -12,11 +12,18 @@
 #  writer_id     :integer
 #  assignment_id :integer
 #
+class StatusValidator < ActiveModel::Validator
+  def validate(record)
+    if record.published and not (record.copyedited and record.edited)
+      record.errors[:base] = "Submissions cannot be published until they have been copyedited and edited."
+    end
+  end
+end
 
 class Submission < ActiveRecord::Base
   include ActiveModel::Validations
   resourcify
-  attr_accessible :body, :byline, :headline, :writer_id, :assignment_id, :issue_id
+  attr_accessible :body, :byline, :headline, :writer_id, :assignment_id, :issue_id, :copyedited, :edited, :published
   belongs_to :assignment
   belongs_to :issue
   belongs_to :writer
@@ -37,13 +44,5 @@ class Submission < ActiveRecord::Base
         :tags => %w(a b i strong em p h1 h2 h3 h4 h5 h6),
         :attributes => %w(href name src type value width height data))
     result.gsub(/&nbsp;/, ' ')
-  end
-end
-
-class StatusValidator < ActiveModel::Validator
-  def validate(record)
-    if record.published and not (record.copyedited and record.edited)
-      record.errors[:base] = "Submissions cannot be published until they have been copyedited and edited."
-    end
   end
 end

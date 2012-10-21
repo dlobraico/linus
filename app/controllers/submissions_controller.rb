@@ -4,7 +4,21 @@ class SubmissionsController < ApplicationController
   # GET /submissions
   # GET /submissions.json
   def index
-    @submissions = Submission.all
+    filter_hash =
+      initial = {
+        :published => false,
+        :edited => false,
+        :copyedited => false }
+
+      initial.each { |key, value|
+        initial[key] =
+          unless params[key].nil?
+            true if params[key]
+          else
+            value
+          end }
+
+    @submissions = Submission.where(filter_hash)
 
     respond_to do |format|
       format.html # index.html.erb

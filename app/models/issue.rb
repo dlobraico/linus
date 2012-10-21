@@ -50,7 +50,11 @@ class Issue < ActiveRecord::Base
     self.upcoming_issues.first
   end
 
-  def submission_deadline 
+  def submission_deadline
     printing_deadline
+  end
+
+  def articles
+    submissions.where(:published => true)
   end
 end

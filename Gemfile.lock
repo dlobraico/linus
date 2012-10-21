@@ -117,6 +117,9 @@ GEM
       jquery-rails
       railties (>= 3.1.0)
     json (1.7.4)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     libwebsocket (0.1.5)
       addressable
     linecache19 (0.5.12)
@@ -251,6 +254,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-bootstrap-rails
   jquery-ui-rails
+  kaminari
   mysql2
   nested_form
   rails (= 3.2.8)

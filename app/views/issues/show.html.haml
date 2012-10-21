@@ -1,6 +1,25 @@
 %p#notice= notice
 
 %h1= "Volume #{@issue.volume}, Issue #{@issue.issue}"
+#metadata
+  #submission_deadline= "Submission Deadline: #{@issue.submission_deadline.to_s :pretty}"
+  #printing_deadline= "Printing Deadline: #{@issue.printing_deadline.to_s :pretty}"
+  #distribution= "Distribution: #{@issue.distribution.to_s :pretty}"
+%h2 Articles
+%table
+  %thead
+    %th Headline
+    %th Byline
+    %th Writer
+    %th
+  %tbody
+    - @issue.articles.each do |submission|
+      %tr
+        %td= submission.headline
+        %td= submission.byline
+        %td= submission.writer.name
+        %td= link_to 'View', submission_path(submission)
+
 
 = link_to 'Edit', edit_issue_path(@issue)
 \|

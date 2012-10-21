@@ -11,17 +11,24 @@
       = f.text_field :headline, :placeholder => "Headline"
     .field
       = f.text_field :byline, :placeholder => "Byline"
-    .field
-      = f.label "Writer: "
-      = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
-      = f.hidden_field :body
+      
+    = f.label "Writer: "
+    = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
+    = f.label "Copyedited: "
+    = f.check_box :copyedited
+    = f.label "Edited: "
+    = f.check_box :edited
+    = f.label "Published : "
+    = f.check_box :published
+    
+    = f.hidden_field :body
     = f.hidden_field :assignment_id
     = f.hidden_field :issue_id
-
-      %div{:id => 'editor' }
-        %div{:id => 'submission_body_editable_wrapper'}
-          %div{:id => 'submission_body_editable', :class => 'editable'}
-            %p
+    
+    %div{:id => 'editor' }
+      %div{:id => 'submission_body_editable_wrapper'}
+        %div{:id => 'submission_body_editable', :class => 'editable'}
+          %p
 
     .actions
       = f.submit 'Save', :id => "submission_save"
