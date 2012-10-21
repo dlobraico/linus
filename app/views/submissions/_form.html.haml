@@ -10,7 +10,7 @@
     .field
       = f.text_field :headline, :placeholder => "Headline"
     .field
-      = f.text_field :byline, :placeholder => "Byline"
+      = byline_or_writer_field f, @submission
       
     = f.label "Writer: "
     = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
