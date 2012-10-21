@@ -1,15 +1,24 @@
 %p#notice= notice
 
 %h1= "Volume #{@issue.volume}, Issue #{@issue.issue}"
-#metadata
-  #submission_deadline= "Submission Deadline: #{@issue.submission_deadline.to_s :pretty}"
-  #printing_deadline= "Printing Deadline: #{@issue.printing_deadline.to_s :pretty}"
-  #distribution= "Distribution: #{@issue.distribution.to_s :pretty}"
-%h2 Articles
-= render :partial => 'submissions/table', :locals => { :submissions => @issue.articles }
+%table#metadata
+  %tr
+    %td Submission Deadline:
+    %td= @issue.submission_deadline.to_s :pretty
+  %tr
+    %td Printing Deadline:
+    %td= @issue.printing_deadline.to_s :pretty
+  %tr
+    %td Distribution:
+    %td= @issue.distribution.to_s :pretty
+    
+- unless @issue.articles.empty?  
+  %h2 Articles
+  = render :partial => 'submissions/table', :locals => { :submissions => @issue.articles }
         
-%h2 Submissions
-= render :partial => 'submissions/table', :locals => { :submissions => @issue.submissions }
+- unless @issue.submissions.empty?  
+  %h2 Submissions
+  = render :partial => 'submissions/table', :locals => { :submissions => @issue.submissions }
 
 
 = link_to 'Edit', edit_issue_path(@issue)
