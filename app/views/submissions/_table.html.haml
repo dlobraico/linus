@@ -1,0 +1,14 @@
+%table
+  %thead
+    %th Headline
+    %th Byline
+    %th Writer
+    %th
+  %tbody
+    - submissions.each do |submission|
+      %tr
+        %td= submission.headline
+        %td= submission.byline
+        %td= submission.writer.name
+        %td= link_to 'View', submission_path(submission)
+        

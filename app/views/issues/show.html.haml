@@ -6,19 +6,10 @@
   #printing_deadline= "Printing Deadline: #{@issue.printing_deadline.to_s :pretty}"
   #distribution= "Distribution: #{@issue.distribution.to_s :pretty}"
 %h2 Articles
-%table
-  %thead
-    %th Headline
-    %th Byline
-    %th Writer
-    %th
-  %tbody
-    - @issue.articles.each do |submission|
-      %tr
-        %td= submission.headline
-        %td= submission.byline
-        %td= submission.writer.name
-        %td= link_to 'View', submission_path(submission)
+= render :partial => 'submissions/table', :locals => { :submissions => @issue.articles }
+        
+%h2 Submissions
+= render :partial => 'submissions/table', :locals => { :submissions => @issue.submissions }
 
 
 = link_to 'Edit', edit_issue_path(@issue)
