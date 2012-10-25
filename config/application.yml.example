@@ -1,3 +1,9 @@
-mail:
-  user: <some-username>
-  password: <some-password>
+development:
+  mail:
+    user: <some-username>
+    password: <some-password>
+
+production:
+  mail:
+    user: <some-username>
+    password: <some-password>
