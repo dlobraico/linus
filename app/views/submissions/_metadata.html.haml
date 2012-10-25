@@ -1,5 +1,8 @@
 %table#metadata
   %tr
+    %td Approved:
+    %td!= boolean_to_unicode submission.approved
+  %tr
     %td Copyedited:
     %td!= boolean_to_unicode submission.copyedited
   %tr

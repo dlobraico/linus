@@ -3,6 +3,10 @@
     %th Headline
     %th Byline
     %th Writer
+    %th Approved?
+    %th Copyedited?
+    %th Edited?
+    %th Published?
     %th
   %tbody
     - submissions.each do |submission|
@@ -10,5 +14,9 @@
         %td= submission.headline
         %td= submission.byline
         %td= submission.writer.name
+        %td!= boolean_to_unicode submission.approved
+        %td!= boolean_to_unicode submission.copyedited
+        %td!= boolean_to_unicode submission.edited
+        %td!= boolean_to_unicode submission.published
         %td= link_to 'View', submission_path(submission)
         
