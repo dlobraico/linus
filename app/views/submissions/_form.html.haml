@@ -7,21 +7,24 @@
           - @submission.errors.full_messages.each do |msg|
             %li= msg
 
-    .field
-      = f.text_field :headline, :placeholder => "Headline"
-    .field
-      = byline_or_writer_field f, @submission
-      
-    = f.label "Writer: "
-    = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
-    = f.label "Approved: "
-    = f.check_box :approved
-    = f.label "Copyedited: "
-    = f.check_box :copyedited
-    = f.label "Edited: "
-    = f.check_box :edited
-    = f.label "Published : "
-    = f.check_box :published
+
+    #top
+      #headline_byline
+        .field= f.text_field :headline, :placeholder => "Headline"
+        .field= byline_or_writer_field f, @submission
+      #notes= f.text_area :notes, :cols => "40", :rows => "5", :placeholder => "Notes"
+
+    #metadata_fields
+      = f.label "Writer: "
+      = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
+      = f.label "Approved: "
+      = f.check_box :approved
+      = f.label "Copyedited: "
+      = f.check_box :copyedited
+      = f.label "Edited: "
+      = f.check_box :edited
+      = f.label "Published : "
+      = f.check_box :published
     
     = f.hidden_field :body
     = f.hidden_field :clean_body

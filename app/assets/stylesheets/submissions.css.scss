@@ -23,7 +23,7 @@ body.submissions {
             text-align: left;
             margin: 0;
         }
-        
+
         #body {
            width: 33em; 
            text-align: justify;
@@ -56,6 +56,39 @@ body.submissions {
                     @include input-field-box-shadow;
                 }
             }
+
+            #top {
+              clear: both;
+              height: 100px;
+              margin-bottom: 20px;
+              #headline_byline {
+                width: 350px;
+                float: left;
+                height: 100px;
+                .field {
+                  width: 350px;
+                  margin: 8px;
+                  margin-top: 0;
+                  input[type="text"] {
+                    font-size: 18px;
+                    font-family: inherit;
+                    @include sexy-input-field;
+                    @include input-field-box-shadow;
+                  }
+                }
+              }
+              #notes {
+                width: 350px;
+                float: left;
+                height: 100px;
+                margin-top: 0;
+              }
+            }
+
+            #metadata_fields {
+              margin: 10px;
+            }
+        
 
             .actions {
                 float: right;

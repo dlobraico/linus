@@ -27,7 +27,7 @@ end
 class Submission < ActiveRecord::Base
   include ActiveModel::Validations
   resourcify
-  attr_accessible :body, :clean_body, :byline, :headline, :writer_id, :assignment_id, :issue_id, :copyedited, :edited, :published, :approved
+  attr_accessible :body, :clean_body, :byline, :headline, :writer_id, :assignment_id, :issue_id, :copyedited, :edited, :published, :approved, :notes
   belongs_to :assignment
   belongs_to :issue
   belongs_to :writer

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121025064941) do
+ActiveRecord::Schema.define(:version => 20121026054732) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "idea_id"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(:version => 20121025064941) do
     t.boolean  "published"
     t.text     "clean_body"
     t.boolean  "approved"
+    t.text     "notes"
   end
 
   create_table "writers", :force => true do |t|
