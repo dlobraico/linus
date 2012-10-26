@@ -38,8 +38,15 @@ body.submissions {
             top: 4px;
         }
 
+        #notes {
+          width: 400px;
+          clear: both;
+        }
+
         #edit_link {
-            clear: both;
+            display:block;
+            float: left;
+            margin-left: 20px;
             width: 20px;
         }
         
@@ -77,7 +84,7 @@ body.submissions {
                   }
                 }
               }
-              #notes {
+              #notes_field {
                 width: 350px;
                 float: left;
                 height: 100px;

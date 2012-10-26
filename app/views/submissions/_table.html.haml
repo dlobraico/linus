@@ -8,6 +8,7 @@
     %th Edited?
     %th Published?
     %th
+    %th
   %tbody
     - submissions.each do |submission|
       %tr
@@ -19,4 +20,5 @@
         %td!= boolean_to_unicode submission.edited
         %td!= boolean_to_unicode submission.published
         %td= link_to 'View', submission_path(submission)
+        %td= link_to 'Edit', edit_submission_path(submission)
         

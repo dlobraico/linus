@@ -12,7 +12,7 @@
       #headline_byline
         .field= f.text_field :headline, :placeholder => "Headline"
         .field= byline_or_writer_field f, @submission
-      #notes= f.text_area :notes, :cols => "40", :rows => "5", :placeholder => "Notes"
+      #notes_field= f.text_area :notes, :cols => "40", :rows => "5", :placeholder => "Notes"
 
     #metadata_fields
       = f.label "Writer: "

@@ -3,5 +3,8 @@
 %div
   #body!= @submission.clean_body
   = render :partial => 'submissions/metadata', :locals => { :submission => @submission }
-#edit_link= link_to 'Edit', edit_submission_path(@submission)
+  #edit_link= link_to 'Edit', edit_submission_path(@submission)
+  #notes
+    %h3 Notes
+    = @submission.notes
 
