@@ -94,7 +94,8 @@ class WritersController < ApplicationController
 
   def remind
     writer = Writer.find(params[:id])
-    WriterMailer.assignment_reminder(writer).deliver
+    assignments = writer.assignments.select {|a| a.submissions.empty?}
+    WriterMailer.assignment_reminder(writer, assignments).deliver
 
     respond_to do |format|
       format.html { render :nothing => true }
@@ -104,8 +105,9 @@ class WritersController < ApplicationController
 
   def remind_all
     Writer.all.each do |writer|
-      unless writer.assignments.empty?
-        WriterMailer.assignment_reminder(writer).deliver
+      assignments = writer.assignments.select {|a| a.submissions.empty?}
+      unless assignments.empty?
+        WriterMailer.assignment_reminder(writer, assignments).deliver
       end
     end
 
