@@ -5,7 +5,13 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all
+    issue_id =
+      if params[:issue_id].nil?
+        Issue.next_issue
+      else
+        params[:issue_id]
+      end
+    @ideas = Idea.where("issue_id = ?", issue_id)
 
     respond_to do |format|
       format.html # index.html.haml
