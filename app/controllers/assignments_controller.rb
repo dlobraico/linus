@@ -4,12 +4,21 @@ class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
   def index
+    i = params[:issue_id]
+    issue_id =
+      if i.nil?
+        Issue.next_issue
+      else
+        i
+      end
+
     w = params[:writer]
-    if w.nil?
-      @assignments = Assignment.all
-    else
-      @assignments = Assignment.where(["writer_id = ?", w])
-    end
+    @assignments =
+      if w.nil?
+        Assignment.where("issue_id = ?", issue_id)
+      else
+        Assignment.where("issue_id = ?", issue_id).where("writer_id = ?", w)
+      end
 
     respond_to do |format|
       format.html # index.html.erb

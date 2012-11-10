@@ -5,11 +5,12 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
+    i = params[:issue]
     issue_id =
-      if params[:issue_id].nil?
+      if i.nil?
         Issue.next_issue
       else
-        params[:issue_id]
+        i
       end
     @ideas = Idea.where("issue_id = ?", issue_id)
 
