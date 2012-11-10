@@ -4,22 +4,14 @@ class SubmissionsController < ApplicationController
   # GET /submissions
   # GET /submissions.json
   def index
-    # filter_hash =
-    #   initial = {
-    #     :published => false,
-    #     :edited => false,
-    #     :copyedited => false }
-
-    #   initial.each { |key, value|
-    #     initial[key] =
-    #       unless params[key].nil?
-    #         true if params[key]
-    #       else
-    #         value
-    #       end }
-
-    # @submissions = Submission.where(filter_hash)
-    @submissions = Submission.all
+    i = params[:issue]
+    issue_id =
+      if i.nil?
+        Issue.next_issue
+      else
+        i
+      end
+    @submissions = Submission.where("issue_id = ?", issue_id)
 
     respond_to do |format|
       format.html # index.html.erb
