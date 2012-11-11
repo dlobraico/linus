@@ -18,6 +18,8 @@ set (:bundle_cmd) { "/usr/local/rbenv/shims/bundle"}
 
 set :rails_env,             "production"
 set :normalize_asset_timestamps, false
+set :shared_children, shared_children + %w{public/uploads}
+
 role :web,                  "linus.chicagoshadydealer.com" # Your HTTP server, Apache/etc
 role :app,                  "linus.chicagoshadydealer.com" # This may be the same as your `Web` server
 role :db,                   "linus.chicagoshadydealer.com", :primary => true # This is where Rails migrations will run

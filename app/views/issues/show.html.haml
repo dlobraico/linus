@@ -2,11 +2,14 @@
 
 %h1
   = "Volume #{@issue.volume}, Issue #{@issue.issue}"
-  = link_to 'Edit', edit_issue_path(@issue)
 
+#edit_link= link_to 'Edit', edit_issue_path(@issue)
 #metadata
   %h3 Metadata
   %table
+    %tr
+      %td Published Issue:
+      %td= link_to 'PDF', @issue.published_issue.url
     %tr
       %td Submission Deadline:
       %td= @issue.submission_deadline.to_s :pretty

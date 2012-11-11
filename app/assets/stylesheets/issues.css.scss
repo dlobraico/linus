@@ -13,6 +13,9 @@ body.issues {
     h2 {
       text-align: center;
     }
+    #edit_link {
+        clear: both;
+    }
     #attachments {
         float: left;
         margin-left: 30px;
