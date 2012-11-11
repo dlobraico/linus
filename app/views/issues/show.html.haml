@@ -24,10 +24,12 @@
     - @issue.attachments.each do |a|
       %li= link_to a.description, a.file.url
   
-- unless @issue.articles.empty?  
-  %h2 Articles
-  = render :partial => 'submissions/table', :locals => { :submissions => @issue.articles }
+#articles
+  - unless @issue.articles.empty?  
+    %h2 Articles
+    = render :partial => 'submissions/table', :locals => { :submissions => @issue.articles }
         
-- unless @issue.submissions.empty?  
-  %h2 Submissions
-  = render :partial => 'submissions/table', :locals => { :submissions => @issue.submissions }
+#submissions
+  - unless @issue.submissions.empty?  
+    %h2 Submissions
+    = render :partial => 'submissions/table', :locals => { :submissions => @issue.submissions }
