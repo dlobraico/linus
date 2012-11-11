@@ -7,9 +7,10 @@
 #metadata
   %h3 Metadata
   %table
-    %tr
-      %td Published Issue:
-      %td= link_to 'PDF', @issue.published_issue.url
+    - unless @issue.published_issue.blank?
+      %tr
+        %td Published Issue:
+        %td= link_to 'PDF', @issue.published_issue.url
     %tr
       %td Submission Deadline:
       %td= @issue.submission_deadline.to_s :pretty
