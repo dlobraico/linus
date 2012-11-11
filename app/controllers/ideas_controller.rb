@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    i = params[:issue]
+    i = params[:issue_id]
     @issue =
       if i.nil?
         Issue.next_issue

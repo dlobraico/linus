@@ -8,7 +8,7 @@ class SubmissionsController < ApplicationController
   # GET /submissions
   # GET /submissions.json
   def index
-    i = params[:issue]
+    i = params[:issue_id]
     @issue =
       if i.nil?
         Issue.next_issue
