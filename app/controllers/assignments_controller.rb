@@ -5,7 +5,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments.json
   def index
     i = params[:issue_id]
-    issue_id =
+    @issue =
       if i.nil?
         Issue.next_issue
       else
@@ -15,9 +15,9 @@ class AssignmentsController < ApplicationController
     w = params[:writer]
     @assignments =
       if w.nil?
-        Assignment.where("issue_id = ?", issue_id)
+        Assignment.where("issue_id = ?", @issue)
       else
-        Assignment.where("issue_id = ?", issue_id).where("writer_id = ?", w)
+        Assignment.where("issue_id = ?", @issue).where("writer_id = ?", w)
       end
 
     respond_to do |format|

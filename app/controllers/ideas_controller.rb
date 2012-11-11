@@ -6,13 +6,13 @@ class IdeasController < ApplicationController
   # GET /ideas.json
   def index
     i = params[:issue]
-    issue_id =
+    @issue =
       if i.nil?
         Issue.next_issue
       else
         i
       end
-    @ideas = Idea.where("issue_id = ?", issue_id)
+    @ideas = Idea.where("issue_id = ?", @issue)
 
     respond_to do |format|
       format.html # index.html.haml

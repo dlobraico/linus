@@ -35,4 +35,8 @@ class Issue < ActiveRecord::Base
   def articles
     submissions.where(:published => true)
   end
+
+  def short_string
+    "Vol. #{volume}, Iss. #{issue}"
+  end
 end

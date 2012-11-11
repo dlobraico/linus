@@ -9,13 +9,13 @@ class SubmissionsController < ApplicationController
   # GET /submissions.json
   def index
     i = params[:issue]
-    issue_id =
+    @issue =
       if i.nil?
         Issue.next_issue
       else
         i
       end
-    @submissions = Submission.where("issue_id = ?", issue_id)
+    @submissions = Submission.where("issue_id = ?", @issue)
 
     respond_to do |format|
       format.html # index.html.erb
