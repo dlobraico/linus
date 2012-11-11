@@ -18,7 +18,10 @@
   .field
     = f.label :distribution
     = f.datetime_select :distribution
-    
+  .field  
+    = f.label :published_issue
+    = f.file_field :published_issue
+  
   = f.fields_for :attachments do |attachment_form|
     .field
       = attachment_form.label :description
