@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121111004756) do
+ActiveRecord::Schema.define(:version => 20121111011710) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "idea_id"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(:version => 20121111004756) do
     t.datetime "updated_at", :null => false
     t.integer  "issue_id"
   end
+
+  create_table "attachments", :force => true do |t|
+    t.text     "description"
+    t.string   "file"
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "attachments", ["attachable_id"], :name => "index_attachments_on_attachable_id"
 
   create_table "editors", :force => true do |t|
     t.string   "first_name"

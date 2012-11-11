@@ -14,6 +14,7 @@ gem 'rolify'
 gem 'nested_form'
 gem 'kaminari'
 gem 'paper_trail'
+gem 'carrierwave'
 
 # Gems used only for assets and not required
 # in production environments by default.

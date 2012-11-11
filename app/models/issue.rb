@@ -1,38 +1,14 @@
-# == Schema Information
-#
-# Table name: issues
-#
-#  id                :integer          not null, primary key
-#  volume            :integer
-#  issue             :integer
-#  printing_deadline :datetime
-#  distribution      :datetime
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  status            :string(255)
-#
-
-# == Schema Information
-#
-# Table name: issues
-#
-#  id                :integer          not null, primary key
-#  volume            :integer
-#  issue             :integer
-#  printing_deadline :datetime
-#  distribution      :datetime
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#
-# TODO: Rename the printing_deadline field to submission_deadline. 
-# Or perhaps add an independent submission deadline.
 class Issue < ActiveRecord::Base
+  # TODO: Rename the printing_deadline field to submission_deadline. 
+  # Or perhaps add an independent submission deadline.
   resourcify
   has_many :ideas
   has_many :assignments
   has_many :submissions
+  has_many :attachments, :as => :attachable
 
-  attr_accessible :distribution, :issue, :printing_deadline, :volume
+  attr_accessible :distribution, :issue, :printing_deadline, :volume, :attachments_attributes
+  accepts_nested_attributes_for :attachments
 
   def is_next?
     if self == Issue.next_issue

@@ -1,4 +1,4 @@
-= form_for @issue do |f|
+= nested_form_for @issue do |f|
   -if @issue.errors.any?
     #error_explanation
       %h2= "#{pluralize(@issue.errors.count, "error")} prohibited this issue from being saved:"
@@ -7,15 +7,28 @@
           %li= msg
 
   .field 
+    = f.label :volume
     = f.text_field :volume, :placeholder => "V"
   .field
+    = f.label :issue
     = f.text_field :issue, :placeholder => "I"
   .field
     = f.label :printing_deadline
-    = f.text_field :printing_deadline
+    = f.datetime_select :printing_deadline
   .field
     = f.label :distribution
-    = f.text_field :distribution
-  
+    = f.datetime_select :distribution
+    
+  = f.fields_for :attachments do |attachment_form|
+    .field
+      = attachment_form.label :description
+      = attachment_form.text_field :description
+    .field
+      = attachment_form.label :file
+      = attachment_form.file_field :file
+    = attachment_form.link_to_remove "Remove this attachment"
+    
+  = f.link_to_add "Add attachment", :attachments
+    
   .actions
     = f.submit 'Save'

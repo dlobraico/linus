@@ -13,23 +13,28 @@ body.issues {
     h2 {
       text-align: center;
     }
-    table {
-      width: 100%;
-      tr {
-        &.odd {
-          background-color: #FFF;
+    #attachments {
+        float: left;
+        margin-left: 30px;
+    }
+    
+    #metadata {
+        width: 400px;
+        float: left;
+        table {
+            width: 100%;
+            tr {
+                &.odd {
+                    background-color: #FFF;
+                }
+                &.even {
+                    background-color: #EEE;
+                }
+                td {
+                    padding: 4px;
+                }
+            }
         }
-        &.even {
-          background-color: #EEE;
-        }
-        td {
-          padding: 4px;
-        }
-      }
-      &#metadata {
-          width: 400px;
-          clear: both;
-      }
     }
   }
 }

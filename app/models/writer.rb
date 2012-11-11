@@ -1,14 +1,3 @@
-# == Schema Information
-#
-# Table name: writers
-#
-#  id         :integer          not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  email      :string(255)
-#  name       :string(255)
-#
-
 class Writer < ActiveRecord::Base
   has_many :assignments
   has_many :submissions

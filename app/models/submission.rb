@@ -1,21 +1,3 @@
-# == Schema Information
-#
-# Table name: submissions
-#
-#  id            :integer          not null, primary key
-#  headline      :string(255)
-#  byline        :string(255)
-#  body          :text
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  issue_id      :integer
-#  writer_id     :integer
-#  assignment_id :integer
-#  copyedited    :boolean
-#  edited        :boolean
-#  published     :boolean
-#  clean_body    :text
-
 class StatusValidator < ActiveModel::Validator
   def validate(record)
     if record.published and not (record.copyedited and record.edited)
