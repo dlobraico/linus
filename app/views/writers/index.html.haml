@@ -17,7 +17,7 @@
       %td= link_to 'Assignments', :action => "index", :controller => "assignments", :writer => writer
       %td= link_to 'Send Reminder', remind_writer_path(writer), :remote => true
       %td= link_to 'Edit', edit_writer_path(writer)
-      %td= link_to 'Destroy', writer, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Delete', writer, :confirm => 'Are you sure?', :method => :delete
 
 %br
 
