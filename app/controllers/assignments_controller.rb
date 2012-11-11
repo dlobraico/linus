@@ -9,7 +9,7 @@ class AssignmentsController < ApplicationController
       if i.nil?
         Issue.next_issue
       else
-        i
+        Issue.find i
       end
 
     w = params[:writer]

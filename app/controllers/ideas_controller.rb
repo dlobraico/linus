@@ -10,7 +10,7 @@ class IdeasController < ApplicationController
       if i.nil?
         Issue.next_issue
       else
-        i
+        Issue.find i
       end
     @ideas = Idea.where("issue_id = ?", @issue)
 
