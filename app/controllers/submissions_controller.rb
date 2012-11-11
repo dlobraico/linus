@@ -1,6 +1,10 @@
 class SubmissionsController < ApplicationController
   before_filter :authenticate_editor!
 
+  def current_user
+    current_editor
+  end
+
   # GET /submissions
   # GET /submissions.json
   def index
