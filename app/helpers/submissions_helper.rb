@@ -1,9 +1,11 @@
 module SubmissionsHelper
   def byline_or_writer_field(form, submission)
-    unless @submission.writer.nil?
+    if (not @submission.byline.nil?)
+      form.text_field :byline, :placeholder => "Byline"
+    elsif (not @submission.writer.nil?)
       form.text_field :byline, :value => @submission.writer.name
     else
-      form.text_field :byline, :placeholder => "Byline"
+      form.text_field :byline
     end
   end
 
