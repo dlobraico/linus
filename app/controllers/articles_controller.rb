@@ -2,13 +2,6 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    i = params[:issue_id]
-    @issue =
-      if i.nil?
-        Issue.next_issue
-      else
-        Issue.find i
-      end
     @articles = Submission.where("issue_id = ? AND published = 1", @issue)
 
     respond_to do |format|
