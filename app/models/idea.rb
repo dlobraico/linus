@@ -4,7 +4,7 @@ class Idea < ActiveRecord::Base
   has_many :writers, :through => :assignments, :dependent => :destroy
   belongs_to :issue
   attr_accessible :headline, :issue_id
-  accepts_nested_attributes_for :writers
+  accepts_nested_attributes_for :assignments
 
   def assign!(writer)
     unless writer.is_a? Writer
@@ -13,6 +13,10 @@ class Idea < ActiveRecord::Base
 
     unless self.writers.include?  writer
       self.writers << writer
+    end
+
+    self.assignments.each do |a|
+      a.issue = Issue.next_issue if a.issue.nil?
     end
 
     self.save
