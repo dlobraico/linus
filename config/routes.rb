@@ -4,6 +4,8 @@ Linus::Application.routes.draw do
 
   get "home/index"
 
+  resources :articles, :only => [:index, :show]
+
   resources :assignments do
     resources :submissions
   end
