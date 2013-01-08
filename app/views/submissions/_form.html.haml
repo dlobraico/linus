@@ -1,13 +1,12 @@
 #submit_form
   = nested_form_for @submission do |f|
-    -if @submission.errors.any?
+    - if @submission.errors.any?
       #error_explanation
         %h2= "#{pluralize(@submission.errors.count, "error")} prohibited this submission from being saved:"
         %ul
           - @submission.errors.full_messages.each do |msg|
             %li= msg
-
-
+            
     #top
       #headline_byline
         .field= f.text_field :headline, :placeholder => "Headline"
@@ -30,12 +29,18 @@
     = f.hidden_field :clean_body
     = f.hidden_field :assignment_id
     = f.hidden_field :issue_id
-    
+
     %div{:id => 'editor' }
       %div{:id => 'submission_body_editable_wrapper'}
         %div{:id => 'submission_body_editable', :class => 'editable'}
           %p
-
+    
+    = f.fields_for :attachments do |attachment_form|
+      = attachment_form.text_field :description, :default => "Description"
+      = attachment_form.file_field :file
+      = attachment_form.link_to_remove "Remove"
+    = f.link_to_add "Add attachment", :attachments
+    
     .actions
       = f.submit 'Save', :id => "submission_save"
       
