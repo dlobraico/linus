@@ -27,10 +27,10 @@ class SubmissionsController < ApplicationController
   # GET /submissions/1.json
   def show
     @submission = Submission.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @submission }
+      format.json { render json:  @submission.to_json(:include => {:images => {:only => [:description, :file]}}) }
     end
   end
 
