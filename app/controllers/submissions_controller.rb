@@ -30,7 +30,7 @@ class SubmissionsController < ApplicationController
     
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json:  @submission.to_json(:include => {:images => {:only => [:description, :file]}}) }
+      format.json { render json:  @submission }
     end
   end
 

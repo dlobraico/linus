@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
       end
 
     respond_to do |format|
-      format.json { render json: @article }
+      format.json { render json:  @article.to_json(:include => {:images => {:only => [:description, :file]}}) }
     end
   end
 
