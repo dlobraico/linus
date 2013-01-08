@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
     @articles = Submission.where("issue_id = ? AND published = ?", @issue, true)
 
     respond_to do |format|
-      format.json { render json: @articles }
+      format.json { render json: @articles.to_json(:include => {:images => {:only => [:description, :file]}}) }
     end
   end
 
