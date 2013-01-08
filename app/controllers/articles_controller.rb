@@ -2,7 +2,10 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Submission.where("issue_id = ? AND published = 1", @issue)
+    @issue =
+      id = if params[:issue_id].nil? then Issue.last_issue else params[:issue_id] end
+      Issue.find_by_id(id)
+    @articles = Submission.where("issue_id = ? AND published = ?", @issue, true)
 
     respond_to do |format|
       format.json { render json: @articles }

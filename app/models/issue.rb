@@ -20,6 +20,13 @@ class Issue < ActiveRecord::Base
     end
   end
 
+  def self.last_issue
+    Issue.
+      where("id IN (SELECT issue_id FROM submissions WHERE published = ?)", true).
+      order("id DESC").
+      first
+  end
+
   def self.upcoming_issues
     self.where("distribution > ?", Date.today).order("distribution ASC, created_at ASC")
   end
