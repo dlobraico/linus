@@ -35,11 +35,11 @@
         %div{:id => 'submission_body_editable', :class => 'editable'}
           %p
     
-    = f.fields_for :attachments do |attachment_form|
-      = attachment_form.text_field :description, :default => "Description"
-      = attachment_form.file_field :file
-      = attachment_form.link_to_remove "Remove"
-    = f.link_to_add "Add attachment", :attachments
+    = f.fields_for :images do |image_form|
+      = image_form.text_field :description, :default => "Description"
+      = image_form.file_field :file
+      = image_form.link_to_remove "Remove"
+    = f.link_to_add "Add image", :images
     
     .actions
       = f.submit 'Save', :id => "submission_save"

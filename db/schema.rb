@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121111072248) do
+ActiveRecord::Schema.define(:version => 20130108002908) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "idea_id"
@@ -66,6 +66,17 @@ ActiveRecord::Schema.define(:version => 20121111072248) do
     t.datetime "updated_at", :null => false
     t.integer  "issue_id"
   end
+
+  create_table "images", :force => true do |t|
+    t.text     "description"
+    t.string   "file"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "images", ["imageable_id"], :name => "index_images_on_imageable_id"
 
   create_table "issues", :force => true do |t|
     t.integer  "volume"
