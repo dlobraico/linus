@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130118230440) do
+ActiveRecord::Schema.define(:version => 20130118231306) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "idea_id"
@@ -83,9 +83,9 @@ ActiveRecord::Schema.define(:version => 20130118230440) do
     t.integer  "issue"
     t.datetime "printing_deadline"
     t.datetime "distribution"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-    t.string   "status"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "published",           :limit => 255
     t.string   "published_issue"
     t.datetime "submission_deadline"
   end

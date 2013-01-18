@@ -21,6 +21,9 @@
   .field  
     = f.label :published_issue
     = f.file_field :published_issue
+  .field  
+    = f.label :published
+    = f.check_box :published
   
   = f.fields_for :attachments do |attachment_form|
     .field

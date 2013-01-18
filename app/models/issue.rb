@@ -7,7 +7,7 @@ class Issue < ActiveRecord::Base
   has_many :submissions
   has_many :attachments, :as => :attachable
 
-  attr_accessible :distribution, :issue, :printing_deadline, :submission_deadline, :volume, :attachments_attributes, :published_issue
+  attr_accessible :distribution, :issue, :printing_deadline, :submission_deadline, :volume, :attachments_attributes, :published_issue, :published
   accepts_nested_attributes_for :attachments
 
   mount_uploader :published_issue, AttachmentUploader
