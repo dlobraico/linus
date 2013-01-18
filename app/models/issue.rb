@@ -7,7 +7,7 @@ class Issue < ActiveRecord::Base
   has_many :submissions
   has_many :attachments, :as => :attachable
 
-  attr_accessible :distribution, :issue, :printing_deadline, :volume, :attachments_attributes, :published_issue
+  attr_accessible :distribution, :issue, :printing_deadline, :submission_deadline, :volume, :attachments_attributes, :published_issue
   accepts_nested_attributes_for :attachments
 
   mount_uploader :published_issue, AttachmentUploader
@@ -33,10 +33,6 @@ class Issue < ActiveRecord::Base
 
   def self.next_issue
     self.upcoming_issues.first
-  end
-
-  def submission_deadline
-    printing_deadline
   end
 
   def articles
