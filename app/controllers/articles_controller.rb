@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   def index
     @issue =
       unless params[:issue_id].nil? 
-        issue = Issue.find_by_id(id)
+        issue = Issue.find_by_id(params[:issue_id])
         @articles = Submission.where("issue_id = ? AND published = ?", issue, true)
       else
         @articles = Submission.where("published = ?", true)
