@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article =
-      s = Submission.where("published = ? AND id = ?", true, params[:id])
+      s = Submission.find_by_id(params[:id])
       if s.published then
         s
       else
