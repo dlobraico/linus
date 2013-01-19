@@ -1,5 +1,6 @@
 class IssuesController < ApplicationController
   before_filter :authenticate_editor!
+  
   # GET /issues
   # GET /issues.json
   def index
