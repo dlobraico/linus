@@ -43,7 +43,8 @@ gem 'ice-rails'
 
 # Using a fork below until this pull request allowing multiple column searches gets pulled in
 # https://github.com/crowdint/rails3-jquery-autocomplete/pull/95
-gem 'rails3-jquery-autocomplete', :git => 'git://github.com/slash4/rails3-jquery-autocomplete.git'
+# gem 'rails3-jquery-autocomplete', :git => 'git://github.com/slash4/rails3-jquery-autocomplete.git'
+gem 'rails3-jquery-autocomplete'
 
 group :development, :test do
   gem 'capistrano'
