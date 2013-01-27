@@ -4,8 +4,8 @@ class Linus.Views.Ideas.IndexView extends Backbone.View
   template: JST["backbone/templates/ideas/index"]
 
   initialize: () ->
-    @options.ideas.bind('reset', @addAll)
-    @options.ideas.bind('sync', @render)
+        @options.ideas.on('reset', @addAll)
+        @options.ideas.on('sync', @render)
 
   addAll: () =>
     @options.ideas.each(@addOne)
@@ -17,5 +17,4 @@ class Linus.Views.Ideas.IndexView extends Backbone.View
   render: =>
     $(@el).html(@template(ideas: @options.ideas.toJSON() ))
     @addAll()
-
     return this

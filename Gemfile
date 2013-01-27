@@ -38,7 +38,6 @@ gem 'haml-rails'
 
 gem 'rails-backbone'
 gem 'facebox-rails'
-#gem 'wysihtml5-rails' # replacing with hallo.js, at least for now
 gem 'ice-rails'
 
 # Using a fork below until this pull request allowing multiple column searches gets pulled in
