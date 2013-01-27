@@ -1,6 +1,7 @@
 class IdeasController < ApplicationController
   before_filter :authenticate_editor!
-  autocomplete :writer, :name, :full => true, :extra_data => [:name]
+  autocomplete :writer, :name, :full => true, :extra_data => [:email]
+  autocomplete :writer, :email, :full => true, :extra_data => [:name]
 
   # GET /ideas
   # GET /ideas.json

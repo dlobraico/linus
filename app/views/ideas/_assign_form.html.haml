@@ -4,7 +4,7 @@
       .field
         = writer_form.autocomplete_field :email, autocomplete_writer_email_ideas_path, :placeholder => "Email" 
       .field
-        = writer_form.text_field :name, :placeholder => "Name"
+        = writer_form.autocomplete_field :name, autocomplete_writer_name_ideas_path, :placeholder => "Name"
       
     .actions
       = idea_form.submit 'Assign'
