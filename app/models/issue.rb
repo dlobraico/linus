@@ -1,6 +1,4 @@
 class Issue < ActiveRecord::Base
-  # TODO: Rename the printing_deadline field to submission_deadline. 
-  # Or perhaps add an independent submission deadline.
   resourcify
   has_many :ideas
   has_many :assignments

@@ -93,8 +93,12 @@ class WritersController < ApplicationController
   end
 
   def remind
+    current_issue = Issue.next_issue 
+
     writer = Writer.find(params[:id])
-    assignments = writer.assignments.select {|a| a.submissions.empty?}
+    assignments = writer.assignments.select do |a| 
+      a.issue == current_issue and a.submissions.empty?
+    end
     WriterMailer.assignment_reminder(writer, assignments).deliver
 
     respond_to do |format|
@@ -104,8 +108,11 @@ class WritersController < ApplicationController
   end
 
   def remind_all
+    current_issue = Issue.next_issue
     Writer.all.each do |writer|
-      assignments = writer.assignments.select {|a| a.submissions.empty?}
+      assignments = writer.assignments.select do |a| 
+        a.issue == current_issue and a.submissions.empty?
+      end
       unless assignments.empty?
         WriterMailer.assignment_reminder(writer, assignments).deliver
       end
