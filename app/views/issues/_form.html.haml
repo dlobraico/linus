@@ -13,6 +13,9 @@
     = f.label :issue
     = f.text_field :issue, :placeholder => "I"
   .field
+    = f.label :submission_deadline
+    = f.datetime_select :submission_deadline
+  .field
     = f.label :printing_deadline
     = f.datetime_select :printing_deadline
   .field

@@ -6,8 +6,7 @@
     %h1= "Hi #{@writer.name}!"
     %p  
       The deadline for submission to 
-      = "Volume #{@current_issue.volume},"
-      = "Issue #{@current_issue.issue}"
+      = "Volume #{@current_issue.volume}, Issue #{@current_issue.issue}"
       is 
       %strong= @current_issue.submission_deadline.to_s(:pretty)
     %p 
