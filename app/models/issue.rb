@@ -26,7 +26,7 @@ class Issue < ActiveRecord::Base
   end
 
   def self.upcoming_issues
-    self.where("distribution > ?", Date.today).order("distribution ASC, created_at ASC")
+    self.where("submission_deadline > ?", Date.today).order("distribution ASC, created_at ASC")
   end
 
   def self.next_issue
