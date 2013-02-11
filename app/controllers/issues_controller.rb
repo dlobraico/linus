@@ -4,7 +4,7 @@ class IssuesController < ApplicationController
   # GET /issues
   # GET /issues.json
   def index
-    @issues = Issue.all
+    @issues = Issue.order("distribution DESC")
 
     respond_to do |format|
       format.html # index.html.erb
