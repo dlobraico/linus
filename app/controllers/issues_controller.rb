@@ -16,7 +16,9 @@ class IssuesController < ApplicationController
   # GET /issues/1.json
   def show
     @issue = Issue.find(params[:id])
-    @articles = @issue.submissions.where(:published => true)
+    #@articles = @issue.submissions.where(:published => true)
+    @submissions_to_be_published = @issue.submissions.where(:approved => true, 
+                                                            :published => false)
 
     respond_to do |format|
       format.html # show.html.erb
