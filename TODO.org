@@ -4,23 +4,23 @@
 *** TODO multiple writers for submissions?
 *** TODO the ability to add a new writer from the submission page
 *** TODO add an "add submission" page for writers to make submissions
-*** TODO add a notion of status to submissions
+*** DONE add a notion of status to submissions
     A submission with a status of "published" or something similar
     should in essence become an "article". Pubilshed submissions
     should require association with an issue.
-    
+
     It might be useful to have other available statuses. Should we
     track submissions through the entire process? That is, new,
     editing, copy_editing, etc.? Or would it be better to leave these
     sort of statuses to be a part of the Issue model?
-    
+
 ** Issues
 *** TODO Potentially add status to Issues... see comment in submissions for details
 *** DONE add basic scaffolding for issues
-    
-** Miscellaneous 
+
+** Miscellaneous
 *** TODO Gemify hallo.js
-*** TODO Handle the notion of "current issue" better. 
-    Right now, the create method for the Idea and Submission models simply 
-    force sets @thing.issue = Issue.next_issue, which is probably the wrong 
+*** TODO Handle the notion of "current issue" better.
+    Right now, the create method for the Idea and Submission models simply
+    force sets @thing.issue = Issue.next_issue, which is probably the wrong
     way to do things in some small set of cases.
