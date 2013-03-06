@@ -4,7 +4,8 @@
 .preview{:style => "width: 480px; height: 200px; overflow: hidden;" }
   = image_tag @image.file_url(:primary), :id => "preview"
 
-= form_for :image do |f|
+= form_for @image do |f|
+  = f.hidden_field :imageable_id
   - for attribute in %w[x y h w]
     = f.hidden_field "crop_#{attribute}", :id => "crop_#{attribute}"
   = f.submit "Crop"
