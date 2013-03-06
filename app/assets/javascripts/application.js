@@ -24,4 +24,5 @@
 //= require hallo/hallo
 //= require ice.min
 //= require jquery_nested_form
+//= require jcrop
 //= require_tree .

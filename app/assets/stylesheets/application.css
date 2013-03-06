@@ -14,5 +14,6 @@
  *= require bootstrap
  *= require font-awesome
  *= require hallo/hallo
+ *= require jcrop
  *= require_tree .
 */

@@ -35,11 +35,12 @@
         %div{:id => 'submission_body_editable', :class => 'editable'}
           %p
     
-    = f.fields_for :images do |image_form|
+    = image_tag(@submission.image.file_url(:primary)) if @submission.image.file.present?
+    = f.fields_for :image do |image_form|
       = image_form.text_field :description, :default => "Description"
       = image_form.file_field :file
-      = image_form.link_to_remove "Remove"
-    = f.link_to_add "Add image", :images
+      = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
+      = image_form.check_box :remove_file
     
     .actions
       = f.submit 'Save', :id => "submission_save"

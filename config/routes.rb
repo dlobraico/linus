@@ -31,6 +31,7 @@ Linus::Application.routes.draw do
   end
 
   resources :submissions
+  resources :images, :only => [:update]
 
   authenticated :editor do
     root :to => 'home#index'

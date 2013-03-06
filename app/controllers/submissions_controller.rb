@@ -63,15 +63,16 @@ class SubmissionsController < ApplicationController
   def create
     @submission = Submission.new(params[:submission])
     @submission.issue = Issue.next_issue
+    @image = @submission.image
 
-    respond_to do |format|
-      if @submission.save
-        format.html { redirect_to @submission, notice: 'Submission was successfully created.' }
-        format.json { render json: @submission, status: :created, location: @submission }
+    if @submission.save
+      if @submission.image.file.present?
+        render "images/crop"
       else
-        format.html { render action: "new" }
-        format.json { render json: @submission.errors, status: :unprocessable_entity }
+        redirect_to @submission, notice: 'Submission was successfully created.'
       end
+    else
+      render action: "new"
     end
   end
 
@@ -79,15 +80,16 @@ class SubmissionsController < ApplicationController
   # PUT /submissions/1.json
   def update
     @submission = Submission.find(params[:id])
+    @image = @submission.image
 
-    respond_to do |format|
-      if @submission.update_attributes(params[:submission])
-        format.html { redirect_to @submission, notice: 'Submission was successfully updated.' }
-        format.json { head :no_content }
+    if @submission.update_attributes(params[:submission])
+      if @submission.image.file.present?
+        render "images/crop"
       else
-        format.html { render action: "edit" }
-        format.json { render json: @submission.errors, status: :unprocessable_entity }
+        redirect_to @submission, notice: 'Submission was successfully updated.'
       end
+    else
+      render action: "edit"
     end
   end
 
