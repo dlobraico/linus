@@ -14,8 +14,10 @@ gem 'rolify'
 gem 'nested_form'
 gem 'kaminari'
 gem 'paper_trail'
+
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'jcrop-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

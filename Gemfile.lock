@@ -105,6 +105,9 @@ GEM
     i18n (0.6.1)
     ice-rails (0.0.1)
       railties (>= 3.1.0)
+    jcrop-rails (1.0.2)
+      railties (~> 3.0)
+      thor (~> 0.14)
     journey (1.0.4)
     jquery-rails (2.1.4)
       railties (>= 3.0, < 5.0)
@@ -264,6 +267,7 @@ DEPENDENCIES
   haml
   haml-rails
   ice-rails
+  jcrop-rails
   jquery-rails (~> 2.1.4)
   jquery-ui-bootstrap-rails
   jquery-ui-rails
