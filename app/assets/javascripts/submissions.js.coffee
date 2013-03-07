@@ -17,13 +17,12 @@ jQuery(document).ready ->
       plugins:
         halloformat: {}
         hallojustify: {}
-        #hallolists: {}
-        #halloheadings: {}
-        #halloindicator: {}
-        #halloblock: {}
+        hallolists: {}
+        halloheadings: {}
         #hallolink: {}
         #halloreundo: {}
         #halloimage: {}
+        #halloblacklist: {}
 
       editable: true
       #toolbar: 'halloToolbarFixed'
