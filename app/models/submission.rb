@@ -36,7 +36,7 @@ class Submission < ActiveRecord::Base
   def sanitize field
     result =
       ActionController::Base.helpers.sanitize(field,
-        :tags => %w(a b i strong em p h1 h2 h3 h4 h5 h6 ul li insert delete),
+        :tags => %w(a b i strong em p h1 h2 h3 h4 h5 h6 ul ol li insert delete),
         :attributes => %w(href name src type value width height data class data-cid data-userid data-username data-time))
     result.gsub(/&nbsp;/, ' ')
   end
