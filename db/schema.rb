@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130306082840) do
+ActiveRecord::Schema.define(:version => 20130307191308) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "idea_id"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20130306082840) do
     t.datetime "updated_at",     :null => false
     t.string   "cropy"
     t.integer  "writer_id"
+    t.string   "credit"
   end
 
   add_index "images", ["imageable_id"], :name => "index_images_on_imageable_id"
