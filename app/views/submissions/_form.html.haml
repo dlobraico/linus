@@ -39,7 +39,7 @@
     = f.fields_for :image do |image_form|
       = image_form.text_field :description, :default => "Description"
       = image_form.file_field :file
-      = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
+      = image_form.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
       = image_form.check_box :remove_file
     
     .actions
