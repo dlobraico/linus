@@ -8,6 +8,7 @@ class ImageCropper
       setSelect: [0, 0, 480, 200]
       boxWidth: 500
       boxHeight: 500
+      bgOpacity: 0.4
       onSelect: @update
       onChange: @update
   
