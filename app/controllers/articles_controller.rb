@@ -11,24 +11,21 @@ class ArticlesController < ApplicationController
       end
 
     respond_to do |format|
-      format.json { render json: @articles.to_json(:include => {:image => {:only => [:description, :file]}}) }
+      format.json { render json: @articles.to_json(:include => {:image => {:only => [:description, :writer_id, :file]}}) }
     end
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @article =
-      s = Submission.find_by_id(params[:id])
-      if s.published then
-        s
-      else
-        nil
-      end
-
+    @article = Submission.find_by_id(params[:id])
+        
     respond_to do |format|
-      format.json { render json:  @article.to_json(:include => {:image => {:only => [:description, :file]}}) }
+      if @article.published then
+        format.json { render json:  @article.to_json(:include => {:image => {:only => [:description, :writer_id, :file]}}) }
+      else
+        format.json { render json: nil }
+      end
     end
   end
-
 end
