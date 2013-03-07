@@ -11,7 +11,14 @@ class ArticlesController < ApplicationController
       end
 
     respond_to do |format|
-      format.json { render json: @articles.to_json(:include => {:image => {:only => [:description, :writer_id, :file]}}) }
+      format.json { render json: @articles.to_json(:include => {:image => {:only => [:description, :writer_id, :file]}},
+                                                   :only => [:id,
+                                                             :headline,
+                                                             :writer_id,
+                                                             :clean_body, 
+                                                             :created_at, 
+                                                             :updated_at, 
+                                                             :issue_id]) }
     end
   end
 
@@ -22,7 +29,14 @@ class ArticlesController < ApplicationController
         
     respond_to do |format|
       if @article.published then
-        format.json { render json:  @article.to_json(:include => {:image => {:only => [:description, :writer_id, :file]}}) }
+        format.json { render json:  @article.to_json(:include => {:image => {:only => [:description, :writer_id, :file]}},
+                                                     :only => [:id,
+                                                               :headline,
+                                                               :writer_id,
+                                                               :clean_body, 
+                                                               :created_at, 
+                                                               :updated_at, 
+                                                               :issue_id]) }
       else
         format.json { render json: nil }
       end
