@@ -180,6 +180,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
+    rmagick (2.13.2)
     rolify (3.2.0)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
@@ -280,6 +281,7 @@ DEPENDENCIES
   rails-backbone
   rails3-jquery-autocomplete
   rake
+  rmagick
   rolify
   rspec
   rspec-rails

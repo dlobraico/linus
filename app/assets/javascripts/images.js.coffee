@@ -3,9 +3,11 @@ jQuery ->
 
 class ImageCropper
   constructor: ->
-    $('#cropbox').Jcrop
+    $('#original').Jcrop
       aspectRatio: 2.4
       setSelect: [0, 0, 480, 200]
+      boxWidth: 500
+      boxHeight: 500
       onSelect: @update
       onChange: @update
   
@@ -17,8 +19,17 @@ class ImageCropper
     @updatePreview(coords)
 
   updatePreview: (coords) =>
-  	$('#preview').css
-  		width: Math.round(480/coords.w * $('#cropbox').width()) + 'px'
-  		height: Math.round(200/coords.h * $('#cropbox').height()) + 'px'
-  		marginLeft: '-' + Math.round(480/coords.w * coords.x) + 'px'
-  		marginTop: '-' + Math.round(200/coords.h * coords.y) + 'px'       
+    original = $("#original")
+    preview = $("#preview")
+
+    oH = original.height()
+    oW = original.width()
+
+    pH = preview.height()
+    pW = preview.width()
+
+    rW = pW / coords.w
+    rH = pH / coords.h
+
+    preview.css "background-size", (oW * rW) + "px" + " " + (oH * rH) + "px"
+    preview.css "background-position", rW * Math.round(coords.x) * -1 + "px" + " " + rH * Math.round(coords.y) * -1 + "px"

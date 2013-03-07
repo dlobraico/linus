@@ -16,7 +16,7 @@ gem 'kaminari'
 gem 'paper_trail'
 
 gem 'carrierwave'
-#gem 'rmagick', :require => 'RMagick'
+gem 'rmagick', :require => 'RMagick'
 gem 'mini_magick'
 gem 'jcrop-rails'
 

@@ -1,8 +1,15 @@
-= image_tag @image.file_url(:original), :id => "cropbox"
+:css
+  #preview {
+    background-image: url('#{@image.file_url(:original)}');
+    width: 480px;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+= image_tag @image.file_url(:original), :id => "original"
 
 %h3 Preview
-.preview{:style => "width: 480px; height: 200px; overflow: hidden;" }
-  = image_tag @image.file_url(:primary), :id => "preview"
+#preview
 
 = form_for @image do |f|
   = f.hidden_field :imageable_id

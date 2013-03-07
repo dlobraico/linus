@@ -2,17 +2,21 @@ class ImagesController < ApplicationController
   
   # PUT /images
   def update
-    submission = Submission.find(params[:image][:imageable_id])
-    image = submission.image 
+    @submission = Submission.find(params[:image][:imageable_id])
+    @image = @submission.image 
     
-    image.crop_x = params[:image][:crop_x]
-    image.crop_y = params[:image][:crop_y]
-    image.crop_w = params[:image][:crop_w]
-    image.crop_h = params[:image][:crop_h]
+    @image.crop_x = params[:image][:crop_x]
+    @image.crop_y = params[:image][:crop_y]
+    @image.crop_w = params[:image][:crop_w]
+    @image.crop_h = params[:image][:crop_h]
 
-    image.file.recreate_versions! if image.crop_x.present?
+    if @image.crop_x.present?
+      @image.file.recreate_versions! 
+    end
+
+    #@image.save
     
-    redirect_to submission_path(submission)
+    redirect_to @submission, notice: 'Submission with image successfully created.'
   end
   
 end
