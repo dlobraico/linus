@@ -1,12 +1,12 @@
 :css
   #preview {
-    background-image: url('#{@image.file_url(:original)}');
+    background-image: url('#{@image.file_url(:large)}');
     width: 480px;
     height: 200px;
     overflow: hidden;
   }
   
-= image_tag @image.file_url(:original), :id => "original"
+= image_tag @image.file_url(:large), :id => "original"
 
 %h3 Preview
 #preview

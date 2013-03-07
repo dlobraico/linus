@@ -17,7 +17,7 @@ gem 'paper_trail'
 
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
-gem 'mini_magick'
+#gem 'mini_magick'
 gem 'jcrop-rails'
 
 # Gems used only for assets and not required
