@@ -32,7 +32,7 @@ group :assets do
   gem 'font-awesome-rails'
 
   gem 'execjs'
-  #gem 'therubyracer' # seems to be broken on 64-bit linux
+  gem 'therubyracer' # seems to be broken on 64-bit linux
 end
 
 gem 'haml'
