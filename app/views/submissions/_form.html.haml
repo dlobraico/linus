@@ -16,13 +16,15 @@
     #metadata_fields
       = f.label "Writer: "
       = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
+      = f.label "Websclusive: "
+      = f.check_box :websclusive
       = f.label "Approved: "
       = f.check_box :approved
       = f.label "Copyedited: "
       = f.check_box :copyedited
       = f.label "Edited: "
       = f.check_box :edited
-      = f.label "Published : "
+      = f.label "Published: "
       = f.check_box :published
     
     = f.hidden_field :body

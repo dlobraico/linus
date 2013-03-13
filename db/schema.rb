@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307191308) do
+ActiveRecord::Schema.define(:version => 20130313210116) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "idea_id"
@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(:version => 20130307191308) do
     t.text     "clean_body"
     t.boolean  "approved"
     t.text     "notes"
+    t.boolean  "websclusive"
   end
 
   create_table "versions", :force => true do |t|

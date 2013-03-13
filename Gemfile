@@ -71,5 +71,5 @@ group :development, :test do
   gem 'annotate'
   #gem 'rails3-generators'
   gem 'turn', :require => false
-  gem 'ruby-debug19', :platform => "ruby_19"
+  gem 'debugger'
 end
