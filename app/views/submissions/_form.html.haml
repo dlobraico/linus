@@ -40,9 +40,11 @@
     
     = image_tag(@submission.image.file_url(:primary)) if @submission.image.file.present?
     = f.fields_for :image do |image_form|
-      = image_form.text_field :description, :default => "Description"
+      = image_form.text_field :description, :placeholder => "Description"
       = image_form.file_field :file
+      = image_form.text_field :credit, :placeholder => "Credit"
       = image_form.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
+      = image_form.label :remove_file
       = image_form.check_box :remove_file
     
     .actions
