@@ -66,11 +66,11 @@ class SubmissionsController < ApplicationController
     @image = @submission.image
 
     if @submission.save
-      if @submission.image.file.present?
-        render "images/crop"
-      else
+      #if @submission.image.file.present?
+      #  render "images/crop"
+      #else
         redirect_to @submission, notice: 'Submission was successfully created.'
-      end
+      #end
     else
       render action: "new"
     end
@@ -83,11 +83,11 @@ class SubmissionsController < ApplicationController
     @image = @submission.image
 
     if @submission.update_attributes(params[:submission])
-      if @submission.image.file.present?
-        render "images/crop"
-      else
+      #if @submission.image.file.present?
+      #  render "images/crop"
+      #else
         redirect_to @submission, notice: 'Submission was successfully updated.'
-      end
+      #end
     else
       render action: "edit"
     end
