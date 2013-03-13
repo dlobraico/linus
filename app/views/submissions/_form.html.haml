@@ -14,8 +14,9 @@
       #notes_field= f.text_area :notes, :cols => "40", :rows => "5", :placeholder => "Notes"
 
     #metadata_fields
-      = f.label "Writer: "
-      = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
+      %div.clear
+        = f.label "Writer: "
+        = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
       = f.label "Websclusive: "
       = f.check_box :websclusive
       = f.label "Approved: "

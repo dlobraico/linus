@@ -10,7 +10,7 @@ class Submission < ActiveRecord::Base
   has_paper_trail
   include ActiveModel::Validations
   resourcify
-  attr_accessible :body, :clean_body, :byline, :headline, :writer_id, :assignment_id, :issue_id, :copyedited, :edited, :published, :approved, :notes, :image_attributes
+  attr_accessible :body, :clean_body, :byline, :headline, :writer_id, :assignment_id, :issue_id, :copyedited, :edited, :published, :approved, :notes, :image_attributes, :websclusive
 
   belongs_to :assignment
   belongs_to :issue
