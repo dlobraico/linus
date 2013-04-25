@@ -3,7 +3,7 @@ class WritersController < ApplicationController
   # GET /writers
   # GET /writers.json
   def index
-    @writers = Writer.all
+    @writers = Writer.order("name")
 
     respond_to do |format|
       format.html # index.html.erb
