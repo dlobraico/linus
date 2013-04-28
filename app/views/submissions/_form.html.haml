@@ -17,6 +17,9 @@
       %div.clear
         = f.label "Writer: "
         = f.collection_select(:writer_id, Writer.all, :id, :name, :prompt => true)
+      %div.clear
+        = f.label "Issue: "
+        = f.collection_select(:issue_id, Issue.all, :id, :short_string)
       = f.label "Websclusive: "
       = f.check_box :websclusive
       = f.label "Approved: "

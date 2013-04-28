@@ -11,7 +11,11 @@ class SubmissionsController < ApplicationController
     i = params[:issue_id]
     @issue =
       if i.nil?
-        Issue.next_issue
+        if Issue.next_issue.present? 
+            Issue.next_issue
+        else
+            Issue.last_issue
+        end
       else
         Issue.find i
       end
