@@ -5,6 +5,6 @@
     = form_tag url_for(:action => controller.action_name, :controller => controller.controller_name), :method => "get" do
       = select_tag 'issue_id', 
         options_from_collection_for_select(Issue.order("volume DESC, issue DESC").all, 
-        :id, :short_string, :selected => (@issue.id unless @issue.id.nil?)), 
+        :id, :short_string, :selected => (unless @issue.nil? then @issue.id else nil end)), 
         :onchange => "$('#issue-select form').submit();"
 
