@@ -7,12 +7,7 @@ class IdeasController < ApplicationController
   # GET /ideas.json
   def index
     i = params[:issue_id]
-    @issue =
-      if i.nil?
-        Issue.next_issue
-      else
-        Issue.find i
-      end
+    @issue = Issue.choose_issue(i)
     @ideas = Idea.where("issue_id = ?", @issue)
 
     respond_to do |format|
@@ -24,7 +19,6 @@ class IdeasController < ApplicationController
   def assign
     @idea = Idea.find(params[:id])
     @assignments = @idea.writers.map {|w| w.name}
-
 
     respond_to do |format|
       if request.xhr?
@@ -86,7 +80,7 @@ class IdeasController < ApplicationController
   # POST /ideas.json
   def create
     @idea = Idea.new(params[:idea].slice(:headline))
-    @idea.issue = Issue.next_issue
+    @issue = Issue.choose_issue(nil)
 
     respond_to do |format|
       if @idea.save

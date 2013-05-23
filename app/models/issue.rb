@@ -33,6 +33,18 @@ class Issue < ActiveRecord::Base
     self.upcoming_issues.first
   end
 
+  def self.choose_issue(id)
+      if id.nil?
+          if self.next_issue.present? 
+              self.next_issue
+          else
+              self.last_issue
+          end
+      else
+          self.find id
+      end
+  end
+
   def articles
     submissions.where(:published => true)
   end
