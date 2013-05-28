@@ -41,7 +41,7 @@ class Issue < ActiveRecord::Base
               self.last_issue
           end
       else
-          self.find id
+          self.find_by_id id
       end
   end
 
