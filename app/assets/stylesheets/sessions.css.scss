@@ -2,14 +2,20 @@
 
 body.sessions {
     .container {
-      @include box-shadow;
-      @include border-radius;
-      background: $container_bg;
-      padding: 20px;
-      margin-bottom: 40px;
-      .form {
-        width: 200px;
-        margin: 0 auto; 
-      }
+        @include box-shadow;
+        @include border-radius;
+        background: $container_bg;
+        padding: 20px;
+        margin-bottom: 40px;
+        .form {
+            width: 300px;
+            margin: 0 auto; 
+            input[type="email"], input[type="password"] {
+                @include sexy-input-field;
+                width: 100%;
+                font-size: 20px;
+            }
+
+        }
     }
-  }
+}
