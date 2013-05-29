@@ -20,6 +20,7 @@ class Submission < ActiveRecord::Base
   before_validation :sanitize_body, :on => :update
 
   validates_with StatusValidator
+  validates_presence_of :headline, :byline, :writer_id
   
   has_one :image, :as => :imageable
   accepts_nested_attributes_for :image
