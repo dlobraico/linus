@@ -4,6 +4,6 @@ class Role < ActiveRecord::Base
   belongs_to :resource, :polymorphic => true
 
   def display_name 
-      name.to_s.camelize
+      name.to_s.titleize
   end
 end
