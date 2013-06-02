@@ -1,5 +1,6 @@
 class IssuesController < ApplicationController
   before_filter :authenticate_editor!
+  load_and_authorize_resource
   
   # GET /issues
   # GET /issues.json

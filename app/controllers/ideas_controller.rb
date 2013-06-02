@@ -1,5 +1,7 @@
 class IdeasController < ApplicationController
   before_filter :authenticate_editor!
+  load_and_authorize_resource
+
   autocomplete :writer, :name,  :full => true, :extra_data => [:email]
   autocomplete :writer, :email, :full => true, :extra_data => [:name]
 

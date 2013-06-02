@@ -1,5 +1,6 @@
 class SubmissionsController < ApplicationController
   before_filter :authenticate_editor!
+  load_and_authorize_resource
 
   def current_user
     current_editor

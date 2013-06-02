@@ -9,19 +9,19 @@ class Ability
       can :manage, :all
     elsif editor.has_role? :managing_editor
       can :read, :all
-      can :write, :issue
+      can :write, Issue
     elsif editor.has_role? :head_copy_editor
-      can :manage, :submissions
-      can :read, :ideas
+      can :manage, Submission
+      can :read, Idea
     elsif editor.has_role? :copy_editor
-      can :write, :submissions
+      can :manage, Submission
     elsif editor.has_role? :secretary
-      can :manage, :ideas
-      can :manage, :assignments
+      can :manage, Idea
+      can :manage, Assignment
     elsif editor.has_role? :layout_editor
       can :read, :all
     else
-      can :read, :ideas
+      can :read, Idea
     end
   end
     # Define abilities for the passed in user here. For example:
