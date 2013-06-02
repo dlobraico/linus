@@ -1,0 +1,21 @@
+@import 'mixins.css.scss';
+
+body.registrations {
+    .container {
+        @include box-shadow;
+        @include border-radius;
+        background: $container_bg;
+        padding: 20px;
+        margin-bottom: 40px;
+        .form {
+            width: 300px;
+            margin: 0 auto; 
+            input[type="text"], input[type="email"], input[type="password"] {
+                @include sexy-input-field;
+                width: 100%;
+                font-size: 14px;
+            }
+
+        }
+    }
+}
