@@ -19,7 +19,7 @@
       %td= editor.first_name
       %td= editor.last_name
       %td= editor.email
-      %td= editor.roles.map {|x| x.name}.join ", "
+      %td= editor.roles.map {|x| x.display_name}.join ", "
       %td= editor.approved
       -#%td= link_to 'Show', editor
       %td= link_to 'Edit', edit_editor_path(editor)

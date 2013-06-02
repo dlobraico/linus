@@ -66,7 +66,7 @@ class EditorsController < ApplicationController
 
     respond_to do |format|
       if @editor.update_attributes(params[:editor])
-        format.html { redirect_to @editor, notice: 'Editor was successfully updated.' }
+        format.html { redirect_to editors_path, notice: 'Editor was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

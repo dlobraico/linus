@@ -16,6 +16,10 @@
     = f.label :email
     = f.text_field :email
   .field
+    = f.label :roles
+    = f.collection_select :role_ids, Role.all, :id, :display_name, {:selected => @editor.role_ids, :include_blank => true}, {:multiple => true}
+
+  .field
     = f.label :approved
     = f.check_box :approved
   .actions
