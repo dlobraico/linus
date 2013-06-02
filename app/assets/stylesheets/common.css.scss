@@ -11,7 +11,10 @@ body {
 .assignments #assignments-nav, 
 .submissions #submissions-nav,
 .articles #articles-nav,
-.preferences #preferences-nav {
+.issues #issues-nav,
+.writers #writers-nav,
+.editors #editors-nav
+{
     a {
         color: $active_nav_link;
     }
